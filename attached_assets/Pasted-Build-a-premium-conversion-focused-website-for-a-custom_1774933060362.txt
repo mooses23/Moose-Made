@@ -1,0 +1,116 @@
+Build a premium, conversion-focused website for a custom packaging fulfillment company that helps small businesses and brands create bespoke packaging from concept to final delivery.
+
+Main objective:
+Create a site that acts as a showroom, trust builder, and lead generation machine. It should clearly communicate that the company handles packaging design support, dieline creation, sourcing, manufacturing coordination, and delivery.
+
+Brand positioning:
+This is not a generic print shop. It is a high-trust packaging solutions partner. The site should feel modern, elegant, and industrial-premium.
+
+Target customers:
+Small businesses, food brands, startups, e-commerce brands, boutique product companies, and founders who need custom packaging but do not fully understand technical packaging requirements.
+
+Pages to build:
+- Home
+- Services
+- How It Works
+- Portfolio
+- Individual Case Study Page
+- Quote Request Page
+- About
+- Blog / Resource Hub
+- Contact
+- FAQ
+
+Homepage requirements:
+- Strong hero section with premium packaging visuals
+- Headline + subheadline + CTA
+- Social proof / trust bar
+- Value proposition cards
+- “How It Works” process timeline
+- Featured portfolio section
+- AI-enhanced capabilities section
+- Quote CTA blocks
+
+How It Works section:
+Show a clear step-by-step process:
+1. Discovery
+2. Packaging Strategy
+3. Design & Mockups
+4. Dieline Creation
+5. Supplier Sourcing
+6. Sampling & Refinement
+7. Production Oversight
+8. Delivery & Fulfillment
+
+Portfolio requirements:
+- Grid of packaging projects
+- Filter by packaging type / industry / finish
+- Case studies with problem, solution, materials, features, final outcome
+- Visuals should include mockups, final photos, dieline previews, and close-up details
+
+Quote form:
+Create a multi-step intelligent quote request form with:
+- contact info
+- company info
+- product category
+- packaging type
+- dimensions / weight
+- quantity
+- budget range
+- launch timeline
+- material or finish preferences
+- required structural features
+- upload area for logo, photos, sketches, inspiration, existing dielines
+- open text area for project description
+- “not sure” options for technical fields
+- progress bar
+- summary before submit
+
+AI-enhanced feature section:
+Show conceptual modules for:
+- AI packaging intake assistant
+- AI dieline assistant
+- AI supplier matching
+- AI quote pre-estimator
+- AI mockup preview generator
+These can initially be UI placeholders with realistic copy and architecture hooks for future implementation.
+
+Design direction:
+- clean, premium, modern
+- off-white, charcoal, muted neutral tones
+- large visuals
+- subtle technical/dieline-inspired design elements
+- strong typography
+- spacious layout
+- mobile responsive
+- fast loading
+
+Technical expectations:
+- Build reusable components
+- Use a clean folder structure
+- Create seed data for portfolio and blog content
+- Set up form handling and submission storage
+- Include an admin-ready architecture for adding portfolio projects, blog posts, and quote submissions later
+- Prepare the project for future AI integrations and supplier database matching
+
+Suggested components:
+- HeroSection
+- TrustBar
+- ProcessTimeline
+- ServiceCards
+- PortfolioGrid
+- CaseStudyCard
+- QuoteFormWizard
+- AIIntakeAssistantSection
+- FAQAccordion
+- BlogCard
+- CTASection
+- Footer
+
+Also:
+- write clean placeholder copy throughout
+- create polished demo case studies
+- create believable packaging project examples
+- prioritize UX clarity for non-technical users
+- make the quote process feel easy and guided
+- structure the code so AI features can later connect to a backend and supplier logic
