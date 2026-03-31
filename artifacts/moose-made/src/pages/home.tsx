@@ -32,24 +32,24 @@ export default function Home() {
             >
               <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1 bg-border/50 border border-border text-xs font-medium uppercase tracking-widest mb-8">
                 <span className="w-2 h-2 rounded-full bg-accent"></span>
-                Premium Fulfillment
+                Small-batch to scale
               </motion.div>
               <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-serif font-semibold leading-[1.1] mb-6 text-primary">
-                Uncompromising <br />
-                <span className="text-accent italic font-light">packaging</span> for modern brands.
+                Got a mockup you made with AI?<br />
+                <span className="text-accent italic font-light">Let's bring it to life.</span>
               </motion.h1>
               <motion.p variants={fadeIn} className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg">
-                We bridge the gap between creative vision and industrial reality. Concept, dieline, sourcing, and fulfillment—engineered for scale, crafted with intention.
+                We're a friendly team that turns your packaging ideas — whether that's an AI mockup, a rough sketch, or just a vision — into real, physical product. No minimum you can't hit. No corporate runaround.
               </motion.p>
               <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-                <Link to="/quote">
+                <Link to="/contact">
                   <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground rounded-none h-14 px-8 text-base">
-                    Start Your Project
+                    Let's Talk
                   </Button>
                 </Link>
                 <Link to="/portfolio">
                   <Button variant="outline" size="lg" className="w-full sm:w-auto rounded-none h-14 px-8 text-base border-border bg-transparent hover:bg-secondary">
-                    View Our Work
+                    See Our Work
                   </Button>
                 </Link>
               </motion.div>
@@ -98,8 +98,8 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-12">
           <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6 text-primary">Beyond printing. <br/>A full manufacturing partner.</h2>
-              <p className="text-muted-foreground text-lg">We don't just put ink on paper. We engineer structural dielines, match you with vetted global suppliers, oversee quality control, and manage domestic fulfillment.</p>
+              <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6 text-primary">More than printing. <br/>Your whole packaging partner.</h2>
+              <p className="text-muted-foreground text-lg">We handle the hard parts — structural design, sourcing, sampling, and getting everything to your door. You just focus on your product and your brand.</p>
             </div>
           </div>
 
@@ -108,17 +108,17 @@ export default function Home() {
               {
                 icon: <PenTool className="w-6 h-6 text-accent mb-6" />,
                 title: "Structural Design",
-                desc: "Custom dielines engineered for durability, unboxing experience, and retail display optimization."
+                desc: "From AI mockup to production-ready dieline. We engineer the structure, you focus on your brand."
               },
               {
                 icon: <Box className="w-6 h-6 text-accent mb-6" />,
-                title: "Global Sourcing",
-                desc: "Direct access to audited manufacturing facilities, ensuring premium materials at competitive scale."
+                title: "Supplier Sourcing",
+                desc: "We tap our network of vetted factories to match your specs and budget — no cold calls required on your end."
               },
               {
                 icon: <Truck className="w-6 h-6 text-accent mb-6" />,
-                title: "Fulfillment & Logistics",
-                desc: "From factory floor to your warehouse. We handle customs, freight, and final mile delivery."
+                title: "Fulfillment & Delivery",
+                desc: "From the factory floor to your warehouse or co-packer. We handle customs, freight, and the final mile."
               }
             ].map((prop, idx) => (
               <div key={idx} className="p-10 border border-border bg-white hover:border-accent transition-colors duration-300">
@@ -139,16 +139,16 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 text-xs font-medium uppercase tracking-widest mb-8">
                 <Cpu className="w-3 h-3" /> Proprietary Tech
               </div>
-              <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6">Intelligence meets manufacturing.</h2>
+              <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6">Your AI mockup is just the beginning.</h2>
               <p className="text-primary-foreground/70 text-lg mb-8 max-w-lg">
-                We've built specialized AI tools to accelerate the packaging process, turning weeks of back-and-forth into minutes of precise generation.
+                We've built our own tools to take your AI-generated design and turn it into a real, manufacturable product faster than anyone else.
               </p>
               
               <ul className="space-y-6">
                 {[
-                  "AI Dieline Assistant — Instant structural visualization.",
-                  "Supplier Matching — Algorithmic factory pairing.",
-                  "Quote Pre-Estimator — Real-time cost modeling."
+                  "AI Dieline Assistant — Instant structural visualization from your mockup.",
+                  "Supplier Matching — We find the right factory for your project.",
+                  "Rapid Mockup Preview — See your packaging in 3D before anything is printed."
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-4 text-primary-foreground/90">
                     <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
@@ -188,12 +188,12 @@ export default function Home() {
       {/* PROCESS TIMELINE PREVIEW */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 md:px-12 text-center max-w-4xl">
-          <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6">Our 8-Step Process</h2>
-          <p className="text-muted-foreground text-lg mb-16">A systematic approach from raw concept to finished goods in your warehouse.</p>
+          <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6">How it all works</h2>
+          <p className="text-muted-foreground text-lg mb-16">A clear, friendly process from first conversation to finished goods at your door.</p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {[
-              "1. Discovery", "2. Strategy", "3. Design", "4. Dieline",
+              "1. Chat", "2. Strategy", "3. Design", "4. Dieline",
               "5. Sourcing", "6. Sampling", "7. Production", "8. Delivery"
             ].map((step, i) => (
               <div key={i} className="py-6 px-4 border border-border hover:bg-secondary transition-colors text-sm font-medium tracking-wide">
@@ -204,7 +204,7 @@ export default function Home() {
           
           <Link to="/how-it-works">
             <Button variant="link" className="text-primary hover:text-accent font-medium text-base h-auto p-0 group">
-              Explore the full process 
+              See the full process 
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
@@ -214,11 +214,11 @@ export default function Home() {
       {/* CTA */}
       <section className="py-32 bg-secondary border-t border-border/50 text-center relative">
         <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <h2 className="text-4xl md:text-6xl font-serif font-semibold mb-8 max-w-3xl mx-auto leading-tight">Ready to elevate your product's presentation?</h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">Get a detailed quote for your custom packaging project within 24 hours.</p>
-          <Link to="/quote">
+          <h2 className="text-4xl md:text-6xl font-serif font-semibold mb-8 max-w-3xl mx-auto leading-tight">Ready to turn your idea into something real?</h2>
+          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">Drop us a message and we'll get back to you personally — usually within a day.</p>
+          <Link to="/contact">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none h-16 px-12 text-lg">
-              Start a Quote Request
+              Let's Talk
             </Button>
           </Link>
         </div>

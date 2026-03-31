@@ -134,9 +134,9 @@ export default function PortfolioDhavi() {
 
       <section className="container mx-auto px-6 md:px-12 pt-24 text-center">
         <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-8">Want results like this?</h2>
-        <Link to="/quote">
+        <Link to="/contact">
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none h-14 px-10 text-base">
-            Start Your Project
+            Let's Talk
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </Link>

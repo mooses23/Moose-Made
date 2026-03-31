@@ -6,43 +6,43 @@ import { ArrowRight } from "lucide-react";
 const steps = [
   {
     num: "01",
-    title: "Discovery & Intake",
-    desc: "We begin by understanding your product, your brand, and your constraints. We collect details on dimensions, weight, fulfillment environment, and budget.",
+    title: "We Chat",
+    desc: "Everything starts with a conversation. Tell us about your product, your brand, and what you're hoping to create. No intake forms or corporate jargon — just a real talk.",
   },
   {
     num: "02",
     title: "Packaging Strategy",
-    desc: "We recommend structural formats, materials, and finish options that align with your goals, weighing the pros and cons of different manufacturing approaches.",
+    desc: "We recommend the right structure, materials, and finishes for your goals and budget. We'll walk you through the pros and cons so you can make an informed decision.",
   },
   {
     num: "03",
     title: "Design & Mockups",
-    desc: "If needed, we assist with applying your artwork to the structure, providing 3D photorealistic mockups so you can visualize the final product before any physical materials are cut.",
+    desc: "If you already have an AI mockup or artwork, great — we'll work with it. If not, we help apply your brand to the structure and generate photorealistic 3D visuals so you can see it before anything is made.",
   },
   {
     num: "04",
     title: "Dieline Creation",
-    desc: "We engineer precise, production-ready dielines. These files act as the architectural blueprints for the factory floor, ensuring perfect folds and closures.",
+    desc: "We engineer precise, production-ready dielines — the structural blueprints for the factory. These ensure perfect folds, closures, and an excellent unboxing experience.",
   },
   {
     num: "05",
     title: "Supplier Sourcing",
-    desc: "Using our network, we match your project to the ideal facility. We solicit bids, compare capabilities, and secure the most competitive pricing without sacrificing quality.",
+    desc: "Using our network, we match your project to the right manufacturer. We handle bids, negotiations, and capability checks so you get the best quality at the best price.",
   },
   {
     num: "06",
     title: "Sampling & Refinement",
-    desc: "We produce physical prototypes. You review the unprinted structure for fit and function, and printed proofs for color accuracy and finish quality (e.g., foil, embossing).",
+    desc: "Before anything goes into mass production, you'll hold a real prototype. Check the fit, the finish, and the feel — and ask for changes until it's exactly right.",
   },
   {
     num: "07",
-    title: "Production Oversight",
-    desc: "Once approved, full production begins. We manage communication, timeline tracking, and quality control checks during the manufacturing process.",
+    title: "Production",
+    desc: "Once you're happy with the sample, we kick off full production. We stay in close contact with the factory and keep you updated throughout the run.",
   },
   {
     num: "08",
-    title: "Delivery & Fulfillment",
-    desc: "We handle the logistics of getting the finished packaging from the factory floor to your warehouse or co-packer, managing freight and customs clearance.",
+    title: "Delivery",
+    desc: "Your finished packaging ships directly to wherever you need it — your warehouse, co-packer, or retail location. We handle freight and customs so you don't have to.",
   }
 ];
 
@@ -56,7 +56,7 @@ export default function HowItWorks() {
             The <span className="text-accent italic font-light">Process</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            A rigorous 8-step methodology designed to eliminate surprises, control costs, and deliver exceptional physical products.
+            No guesswork, no surprises. Just a clear, friendly 8-step process from first conversation to finished packaging at your door.
           </p>
         </div>
       </section>
@@ -94,12 +94,12 @@ export default function HowItWorks() {
       <section className="container mx-auto px-6 md:px-12 mt-24">
         <div className="bg-secondary p-12 border border-border flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h3 className="text-2xl font-serif font-semibold mb-2">Ready to start step 01?</h3>
-            <p className="text-muted-foreground">Submit your project details and we'll get back to you within 24 hours.</p>
+            <h3 className="text-2xl font-serif font-semibold mb-2">Ready to start with step 01?</h3>
+            <p className="text-muted-foreground">Just reach out — we'll take it from there.</p>
           </div>
-          <Link to="/quote">
+          <Link to="/contact">
             <Button size="lg" className="bg-accent hover:bg-accent/90 text-white rounded-none h-14 px-8 whitespace-nowrap">
-              Begin Discovery <ArrowRight className="w-4 h-4 ml-2" />
+              Let's Talk <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </Link>
         </div>

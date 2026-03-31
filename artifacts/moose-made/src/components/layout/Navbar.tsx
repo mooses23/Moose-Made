@@ -58,9 +58,9 @@ export function Navbar() {
             </Link>
           ))}
           <div className="flex items-center gap-4 ml-4">
-            <Link to="/quote">
+            <Link to="/contact">
               <Button className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-none group">
-                Get a Quote
+                Let's Talk
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -105,9 +105,9 @@ export function Navbar() {
               Contact
             </Link>
             <div className="mt-8">
-              <Link to="/quote" onClick={() => setMobileMenuOpen(false)}>
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                 <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-none py-6 text-lg">
-                  Start Your Project
+                  Let's Talk
                 </Button>
               </Link>
             </div>

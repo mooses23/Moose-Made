@@ -11,7 +11,6 @@ import HowItWorks from "@/pages/how-it-works";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Faq from "@/pages/faq";
-import Quote from "@/pages/quote";
 import Portfolio from "@/pages/portfolio/index";
 import PortfolioDhavi from "@/pages/portfolio/dhavi";
 import Blog from "@/pages/blog";
@@ -33,7 +32,6 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/faq" element={<Faq />} />
-              <Route path="/quote" element={<Quote />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/portfolio/dhavi-spelt-bagels" element={<PortfolioDhavi />} />
               <Route path="/blog" element={<Blog />} />

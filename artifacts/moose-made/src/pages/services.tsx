@@ -7,32 +7,32 @@ const services = [
   {
     icon: <PenTool className="w-8 h-8" />,
     title: "Design Support",
-    description: "Whether you have a fully realized vision or just a rough idea, our team helps translate your brand identity into physical form. We assist with typography, color matching (Pantone/CMYK), finish selection, and ensuring your artwork is print-ready.",
+    description: "Whether you have a finished AI mockup or just a rough idea, we help translate your vision into a print-ready file. Typography, color matching (Pantone/CMYK), finish selection — we've got you covered.",
   },
   {
     icon: <Layers className="w-8 h-8" />,
     title: "Dieline Creation",
-    description: "The foundation of great packaging. We engineer custom structural dielines that look beautiful, protect your product, and are optimized for efficient manufacturing and assembly on the factory floor.",
+    description: "The foundation of great packaging. We engineer custom structural dielines that look beautiful, protect your product, and are built to run efficiently on the factory floor.",
   },
   {
     icon: <Globe className="w-8 h-8" />,
     title: "Supplier Sourcing",
-    description: "Leverage our vetted network of global and domestic manufacturing partners. We match your specific material, volume, and quality requirements with the perfect facility, negotiating the best possible rates.",
+    description: "Skip the cold calls. We tap our vetted network of global and domestic manufacturers to match your specs, volume, and budget — and negotiate on your behalf.",
   },
   {
     icon: <Box className="w-8 h-8" />,
     title: "Manufacturing Oversight",
-    description: "We don't just place the order and walk away. Our team manages the entire production run, reviewing pre-production samples, conducting quality control checks, and ensuring colors and finishes match the approved proofs.",
+    description: "We stay involved through the whole production run — reviewing samples, checking quality, and making sure what comes off the line matches what you approved.",
   },
   {
     icon: <CheckSquare className="w-8 h-8" />,
     title: "Sampling & Prototyping",
-    description: "Before full production begins, we produce physical prototypes using correct materials and finishes. This allows you to test product fit, durability, and visual impact before committing to a massive run.",
+    description: "Before anything goes into full production, you'll hold a real prototype in your hands. Test the fit, the feel, and the finish before committing to a full run.",
   },
   {
     icon: <Truck className="w-8 h-8" />,
     title: "Fulfillment & Logistics",
-    description: "Navigating freight, customs, and warehousing can be daunting. We handle the logistics, delivering your finished packaging directly to your co-packer, warehouse, or retail locations safely and on schedule.",
+    description: "We handle freight, customs, and warehousing so you don't have to. Your packaging arrives at your co-packer, warehouse, or retail location safely and on schedule.",
   }
 ];
 
@@ -43,11 +43,11 @@ export default function Services() {
       <section className="container mx-auto px-6 md:px-12 mb-20">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-7xl font-serif font-semibold leading-[1.1] mb-6 text-primary">
-            End-to-End <br />
-            <span className="text-accent italic font-light">Capabilities</span>
+            What we <br />
+            <span className="text-accent italic font-light">do for you</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            From initial structural concept to final delivery at your warehouse, Moose Made provides a comprehensive suite of services designed to eliminate friction in custom packaging.
+            From your first spark of an idea to finished packaging in your hands — we handle the whole journey. No need to deal with factories, logistics, or guesswork on your own.
           </p>
         </div>
       </section>
@@ -80,18 +80,18 @@ export default function Services() {
       <section className="mt-32 bg-secondary border-y border-border/50 py-24">
         <div className="container mx-auto px-6 md:px-12 text-center max-w-4xl">
           <span className="text-xs font-bold uppercase tracking-widest text-accent mb-4 block">Moose Tech</span>
-          <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6">Powered by Artificial Intelligence</h2>
+          <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6">Built with smart tools</h2>
           <p className="text-lg text-muted-foreground mb-12">
-            We supplement our deep industry expertise with custom AI tools that speed up the mundane, giving us more time to focus on the creative.
+            We've built our own AI tools so the boring, repetitive stuff gets done fast — and we can spend more time actually helping you.
           </p>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-left">
             {[
-              { t: "AI Intake Assistant", d: "Translates raw product details into technical packaging specs." },
-              { t: "Dieline Generator", d: "Instantly creates preliminary flat structural patterns." },
-              { t: "Supplier Matching", d: "Algorithms pair your spec with vetted factories." },
-              { t: "Quote Pre-Estimator", d: "Ballpark pricing models based on real market data." },
-              { t: "Mockup Preview", d: "Generate rapid photorealistic 3D visuals of flats." }
+              { t: "AI Intake Assistant", d: "Turns your product details into a clear technical packaging brief." },
+              { t: "Dieline Generator", d: "Creates preliminary structural patterns in minutes, not days." },
+              { t: "Supplier Matching", d: "Finds the right factory for your spec automatically." },
+              { t: "Quote Pre-Estimator", d: "Ballpark pricing based on real market data, upfront." },
+              { t: "Mockup Preview", d: "Generate photorealistic 3D visuals from your flat artwork." }
             ].map((feature, i) => (
               <div key={i} className="bg-background p-6 border border-border">
                 <h4 className="font-medium mb-2">{feature.t}</h4>
@@ -104,10 +104,11 @@ export default function Services() {
 
       {/* CTA */}
       <section className="container mx-auto px-6 md:px-12 mt-32 text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-8">Have a specific project in mind?</h2>
-        <Link to="/quote">
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-4">Got a project in mind?</h2>
+        <p className="text-muted-foreground text-lg mb-8">Just reach out — we love a good conversation about packaging.</p>
+        <Link to="/contact">
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none h-14 px-10 text-base">
-            Get a Detailed Quote
+            Let's Talk
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </Link>
