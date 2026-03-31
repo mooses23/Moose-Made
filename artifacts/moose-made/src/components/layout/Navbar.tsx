@@ -26,9 +26,9 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[padding,background-color] duration-300 border-b ${
         isScrolled
-          ? "bg-[hsl(210_35%_14%)] backdrop-blur-md border-white/10 py-3"
+          ? "bg-[hsl(210_35%_14%)] border-white/10 py-3"
           : "bg-[hsl(210_35%_14%)] border-white/10 py-5"
       }`}
     >
@@ -62,6 +62,12 @@ export function Navbar() {
             </Link>
           ))}
           <div className="flex items-center gap-4 ml-4">
+            <Link
+              to="/dashboard/login"
+              className="text-sm font-medium text-white/60 hover:text-white transition-colors"
+            >
+              Login
+            </Link>
             <Link to="/quote">
               <Button className="bg-accent text-accent-foreground hover:bg-accent/85 rounded-none group border-0 h-9 px-5">
                 Get a Quote
@@ -107,6 +113,15 @@ export function Navbar() {
               }`}
             >
               Contact
+            </Link>
+            <Link
+              to="/dashboard/login"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`transition-colors ${
+                pathname === "/dashboard/login" ? "text-accent" : "text-white"
+              }`}
+            >
+              Login
             </Link>
             <div className="mt-8">
               <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>

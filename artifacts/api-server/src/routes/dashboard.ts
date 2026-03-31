@@ -37,12 +37,11 @@ router.post("/dashboard/login", (req, res): void => {
   }
 
   const inputHash = crypto.createHash("sha256").update(password).digest("hex");
-  const storedHash = crypto.createHash("sha256").update(storedSecret).digest("hex");
 
   const usernameMatch = username === expectedUsername;
   const passwordMatch = crypto.timingSafeEqual(
     Buffer.from(inputHash, "hex"),
-    Buffer.from(storedHash, "hex"),
+    Buffer.from(storedSecret, "hex"),
   );
 
   if (!usernameMatch || !passwordMatch) {
