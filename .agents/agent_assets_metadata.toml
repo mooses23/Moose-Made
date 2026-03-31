@@ -1,0 +1,20 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "OELcN2qFRUbj3vxgyNqvz"
+uri = "file://artifacts/moose-made/src/assets/portfolio-lumiere.png"
+type = "image"
+title = "luxury candle rigid box"
+
+[[generated]]
+id = "FuBBAvj_Ei9YRZWquPpJ7"
+uri = "file://artifacts/moose-made/src/assets/portfolio-oakstone.png"
+type = "image"
+title = "minimal skincare folding carton"
+
+[[generated]]
+id = "niKZAnjg70VBJoewC-VvW"
+uri = "file://artifacts/moose-made/src/assets/portfolio-atelier.png"
+type = "image"
+title = "premium coffee flexible pouch"

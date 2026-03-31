@@ -14,3 +14,58 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * @summary Submit a quote request
+ */
+export const SubmitQuoteBody = zod.object({
+  firstName: zod.string(),
+  lastName: zod.string(),
+  email: zod.string().email(),
+  phone: zod.string().optional(),
+  company: zod.string().optional(),
+  productCategory: zod.string(),
+  packagingType: zod.string(),
+  dimensions: zod.string().optional(),
+  weight: zod.string().optional(),
+  quantity: zod.string(),
+  budgetRange: zod.string().optional(),
+  launchTimeline: zod.string().optional(),
+  materialPreferences: zod.string().optional(),
+  structuralFeatures: zod.string().optional(),
+  projectDescription: zod.string().optional(),
+});
+
+/**
+ * @summary Get all quote submissions
+ */
+export const GetQuotesResponseItem = zod.object({
+  id: zod.number(),
+  firstName: zod.string(),
+  lastName: zod.string(),
+  email: zod.string(),
+  phone: zod.string().optional(),
+  company: zod.string().optional(),
+  productCategory: zod.string(),
+  packagingType: zod.string(),
+  dimensions: zod.string().optional(),
+  weight: zod.string().optional(),
+  quantity: zod.string(),
+  budgetRange: zod.string().optional(),
+  launchTimeline: zod.string().optional(),
+  materialPreferences: zod.string().optional(),
+  structuralFeatures: zod.string().optional(),
+  projectDescription: zod.string().optional(),
+  submittedAt: zod.coerce.date(),
+});
+export const GetQuotesResponse = zod.array(GetQuotesResponseItem);
+
+/**
+ * @summary Submit a contact message
+ */
+export const SubmitContactBody = zod.object({
+  name: zod.string(),
+  email: zod.string().email(),
+  subject: zod.string().optional(),
+  message: zod.string(),
+});

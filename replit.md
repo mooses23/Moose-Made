@@ -2,7 +2,7 @@
 
 ## Overview
 
-pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
+pnpm workspace monorepo using TypeScript. This is the Moose Made website — a premium custom packaging fulfillment company website (moose-made.com).
 
 ## Stack
 
@@ -15,82 +15,97 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Validation**: Zod (`zod/v4`), `drizzle-zod`
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
+- **Frontend**: React + Vite + Tailwind CSS v4 + Wouter + Framer Motion
 
 ## Structure
 
 ```text
 artifacts-monorepo/
 ├── artifacts/              # Deployable applications
-│   └── api-server/         # Express API server
+│   ├── api-server/         # Express API server (backend)
+│   └── moose-made/         # Moose Made website (frontend, serves at /)
 ├── lib/                    # Shared libraries
 │   ├── api-spec/           # OpenAPI spec + Orval codegen config
 │   ├── api-client-react/   # Generated React Query hooks
 │   ├── api-zod/            # Generated Zod schemas from OpenAPI
 │   └── db/                 # Drizzle ORM schema + DB connection
-├── scripts/                # Utility scripts (single workspace package)
-│   └── src/                # Individual .ts scripts, run via `pnpm --filter @workspace/scripts run <script>`
-├── pnpm-workspace.yaml     # pnpm workspace (artifacts/*, lib/*, lib/integrations/*, scripts)
-├── tsconfig.base.json      # Shared TS options (composite, bundler resolution, es2022)
-├── tsconfig.json           # Root TS project references
-└── package.json            # Root package with hoisted devDeps
+├── scripts/                # Utility scripts
+├── attached_assets/        # Product photos and logo assets
+└── ...
 ```
+
+## Moose Made Website
+
+**moose-made.com** — Premium custom packaging fulfillment company.
+
+### Pages
+- `/` — Homepage (hero, trust bar, value props, 8-step process, AI features, portfolio CTA)
+- `/services` — Full service breakdown
+- `/how-it-works` — Detailed 8-step process
+- `/portfolio` — Portfolio grid with D'Havi Spelt Bagels as featured case study
+- `/portfolio/dhavi-spelt-bagels` — Full D'Havi case study with product photos
+- `/quote` — 5-step multi-step quote wizard (Contact → Product → Specs → Details → Review)
+- `/about` — Company story and values
+- `/blog` — Resource hub with seed articles
+- `/contact` — Contact form
+- `/faq` — FAQ accordion
+
+### Brand Identity
+- Moose head logo (attached_assets/F182B37E-7A36-4C46-BA4D-1AC7557158A2_1774933167810.png)
+- D'Havi Spelt Bagels product photos used in portfolio (9 photos in attached_assets/)
+- Color palette: warm off-white background, deep charcoal foreground, burgundy-red accent
+- Typography: Playfair Display (headings) + Inter (body)
+
+### API Endpoints
+- `GET /api/healthz` — Health check
+- `POST /api/quotes` — Submit a quote request
+- `GET /api/quotes` — List all quote submissions
+- `POST /api/contact` — Submit a contact message
+
+### Database Tables
+- `quotes` — Quote submissions from the 5-step wizard
+- `contacts` — Contact form messages
+
+### AI Features Section
+Conceptual UI placeholders for future AI integrations:
+1. AI Packaging Intake Assistant
+2. AI Dieline Assistant
+3. AI Supplier Matching
+4. AI Quote Pre-Estimator
+5. AI Mockup Preview Generator
+
+## Development Commands
+
+- `pnpm --filter @workspace/moose-made run dev` — Run frontend dev server
+- `pnpm --filter @workspace/api-server run dev` — Run API server
+- `pnpm --filter @workspace/api-spec run codegen` — Re-run codegen after OpenAPI changes
+- `pnpm --filter @workspace/db run push` — Push DB schema changes
 
 ## TypeScript & Composite Projects
 
-Every package extends `tsconfig.base.json` which sets `composite: true`. The root `tsconfig.json` lists all packages as project references. This means:
+Every package extends `tsconfig.base.json` which sets `composite: true`. The root `tsconfig.json` lists all lib packages as project references.
 
-- **Always typecheck from the root** — run `pnpm run typecheck` (which runs `tsc --build --emitDeclarationOnly`). This builds the full dependency graph so that cross-package imports resolve correctly. Running `tsc` inside a single package will fail if its dependencies haven't been built yet.
-- **`emitDeclarationOnly`** — we only emit `.d.ts` files during typecheck; actual JS bundling is handled by esbuild/tsx/vite...etc, not `tsc`.
-- **Project references** — when package A depends on package B, A's `tsconfig.json` must list B in its `references` array. `tsc --build` uses this to determine build order and skip up-to-date packages.
-
-## Root Scripts
-
-- `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
-- `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
+- **Always typecheck from the root** — run `pnpm run typecheck`
+- **`emitDeclarationOnly`** — only emit `.d.ts` files during typecheck; actual JS bundling is handled by esbuild/vite
+- **Project references** — when package A depends on package B, A's `tsconfig.json` must list B in its `references` array
 
 ## Packages
 
+### `artifacts/moose-made` (`@workspace/moose-made`)
+React + Vite frontend for the Moose Made website. All pages in `src/pages/`, shared layout in `src/components/layout/`.
+
 ### `artifacts/api-server` (`@workspace/api-server`)
-
-Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` for request and response validation and `@workspace/db` for persistence.
-
-- Entry: `src/index.ts` — reads `PORT`, starts Express
-- App setup: `src/app.ts` — mounts CORS, JSON/urlencoded parsing, routes at `/api`
-- Routes: `src/routes/index.ts` mounts sub-routers; `src/routes/health.ts` exposes `GET /health` (full path: `/api/health`)
-- Depends on: `@workspace/db`, `@workspace/api-zod`
-- `pnpm --filter @workspace/api-server run dev` — run the dev server
-- `pnpm --filter @workspace/api-server run build` — production esbuild bundle (`dist/index.cjs`)
-- Build bundles an allowlist of deps (express, cors, pg, drizzle-orm, zod, etc.) and externalizes the rest
+Express 5 API server. Routes in `src/routes/` — quotes.ts, contact.ts, health.ts.
 
 ### `lib/db` (`@workspace/db`)
-
-Database layer using Drizzle ORM with PostgreSQL. Exports a Drizzle client instance and schema models.
-
-- `src/index.ts` — creates a `Pool` + Drizzle instance, exports schema
-- `src/schema/index.ts` — barrel re-export of all models
-- `src/schema/<modelname>.ts` — table definitions with `drizzle-zod` insert schemas (no models definitions exist right now)
-- `drizzle.config.ts` — Drizzle Kit config (requires `DATABASE_URL`, automatically provided by Replit)
-- Exports: `.` (pool, db, schema), `./schema` (schema only)
-
-Production migrations are handled by Replit when publishing. In development, we just use `pnpm --filter @workspace/db run push`, and we fallback to `pnpm --filter @workspace/db run push-force`.
+Database layer. Schema tables: `quotesTable`, `contactsTable`.
 
 ### `lib/api-spec` (`@workspace/api-spec`)
-
-Owns the OpenAPI 3.1 spec (`openapi.yaml`) and the Orval config (`orval.config.ts`). Running codegen produces output into two sibling packages:
-
-1. `lib/api-client-react/src/generated/` — React Query hooks + fetch client
-2. `lib/api-zod/src/generated/` — Zod schemas
-
+OpenAPI 3.1 spec at `openapi.yaml`. Endpoints: healthz, quotes, contact.
 Run codegen: `pnpm --filter @workspace/api-spec run codegen`
 
 ### `lib/api-zod` (`@workspace/api-zod`)
-
-Generated Zod schemas from the OpenAPI spec (e.g. `HealthCheckResponse`). Used by `api-server` for response validation.
+Generated Zod schemas: `SubmitQuoteBody`, `GetQuotesResponse`, `SubmitContactBody`, `HealthCheckResponse`.
 
 ### `lib/api-client-react` (`@workspace/api-client-react`)
-
-Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHealthCheck`, `healthCheck`).
-
-### `scripts` (`@workspace/scripts`)
-
-Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.
+Generated React Query hooks: `useSubmitQuote`, `useGetQuotes`, `useSubmitContact`, `useHealthCheck`.

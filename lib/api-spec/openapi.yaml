@@ -10,6 +10,10 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: quotes
+    description: Quote request operations
+  - name: contact
+    description: Contact form operations
 paths:
   /healthz:
     get:
@@ -24,6 +28,62 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /quotes:
+    post:
+      operationId: submitQuote
+      tags: [quotes]
+      summary: Submit a quote request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/QuoteRequest"
+      responses:
+        "201":
+          description: Quote submitted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QuoteResponse"
+        "400":
+          description: Validation error
+    get:
+      operationId: getQuotes
+      tags: [quotes]
+      summary: Get all quote submissions
+      responses:
+        "200":
+          description: List of quotes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/QuoteResponse"
+
+  /contact:
+    post:
+      operationId: submitContact
+      tags: [contact]
+      summary: Submit a contact message
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactRequest"
+      responses:
+        "201":
+          description: Message submitted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactResponse"
+        "400":
+          description: Validation error
+
 components:
   schemas:
     HealthStatus:
@@ -34,3 +94,132 @@ components:
       required:
         - status
 
+    QuoteRequest:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+        company:
+          type: string
+        productCategory:
+          type: string
+        packagingType:
+          type: string
+        dimensions:
+          type: string
+        weight:
+          type: string
+        quantity:
+          type: string
+        budgetRange:
+          type: string
+        launchTimeline:
+          type: string
+        materialPreferences:
+          type: string
+        structuralFeatures:
+          type: string
+        projectDescription:
+          type: string
+      required:
+        - firstName
+        - lastName
+        - email
+        - productCategory
+        - packagingType
+        - quantity
+
+    QuoteResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        company:
+          type: string
+        productCategory:
+          type: string
+        packagingType:
+          type: string
+        dimensions:
+          type: string
+        weight:
+          type: string
+        quantity:
+          type: string
+        budgetRange:
+          type: string
+        launchTimeline:
+          type: string
+        materialPreferences:
+          type: string
+        structuralFeatures:
+          type: string
+        projectDescription:
+          type: string
+        submittedAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - firstName
+        - lastName
+        - email
+        - productCategory
+        - packagingType
+        - quantity
+        - submittedAt
+
+    ContactRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        subject:
+          type: string
+        message:
+          type: string
+      required:
+        - name
+        - email
+        - message
+
+    ContactResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        subject:
+          type: string
+        message:
+          type: string
+        submittedAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - name
+        - email
+        - message
+        - submittedAt

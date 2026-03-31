@@ -8,3 +8,57 @@
 export interface HealthStatus {
   status: string;
 }
+
+export interface QuoteRequest {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  productCategory: string;
+  packagingType: string;
+  dimensions?: string;
+  weight?: string;
+  quantity: string;
+  budgetRange?: string;
+  launchTimeline?: string;
+  materialPreferences?: string;
+  structuralFeatures?: string;
+  projectDescription?: string;
+}
+
+export interface QuoteResponse {
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  productCategory: string;
+  packagingType: string;
+  dimensions?: string;
+  weight?: string;
+  quantity: string;
+  budgetRange?: string;
+  launchTimeline?: string;
+  materialPreferences?: string;
+  structuralFeatures?: string;
+  projectDescription?: string;
+  submittedAt: string;
+}
+
+export interface ContactRequest {
+  name: string;
+  email: string;
+  subject?: string;
+  message: string;
+}
+
+export interface ContactResponse {
+  id: number;
+  name: string;
+  email: string;
+  subject?: string;
+  message: string;
+  submittedAt: string;
+}
