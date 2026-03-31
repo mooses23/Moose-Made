@@ -15,6 +15,12 @@ import Portfolio from "@/pages/portfolio/index";
 import PortfolioDhavi from "@/pages/portfolio/dhavi";
 import Blog from "@/pages/blog";
 
+import { AuthProvider } from "@/contexts/AuthContext";
+import { PrivateRoute } from "@/components/dashboard/PrivateRoute";
+import DashboardLogin from "@/pages/dashboard/login";
+import DashboardLeads from "@/pages/dashboard/index";
+import LeadDetail from "@/pages/dashboard/lead-detail";
+
 const queryClient = new QueryClient();
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -23,22 +29,48 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <BrowserRouter basename={basePath}>
-          <MainLayout>
+        <AuthProvider>
+          <BrowserRouter basename={basePath}>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/how-it-works" element={<HowItWorks />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/faq" element={<Faq />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/portfolio/dhavi-spelt-bagels" element={<PortfolioDhavi />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="/dashboard/login" element={<DashboardLogin />} />
+              <Route
+                path="/dashboard"
+                element={
+                  <PrivateRoute>
+                    <DashboardLeads />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/dashboard/:id"
+                element={
+                  <PrivateRoute>
+                    <LeadDetail />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <MainLayout>
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/services" element={<Services />} />
+                      <Route path="/how-it-works" element={<HowItWorks />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path="/contact" element={<Contact />} />
+                      <Route path="/faq" element={<Faq />} />
+                      <Route path="/portfolio" element={<Portfolio />} />
+                      <Route path="/portfolio/dhavi-spelt-bagels" element={<PortfolioDhavi />} />
+                      <Route path="/blog" element={<Blog />} />
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </MainLayout>
+                }
+              />
             </Routes>
-          </MainLayout>
-        </BrowserRouter>
+          </BrowserRouter>
+        </AuthProvider>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

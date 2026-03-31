@@ -56,11 +56,21 @@ artifacts-monorepo/
 - Color palette: warm off-white background, deep charcoal foreground, burgundy-red accent
 - Typography: Playfair Display (headings) + Inter (body)
 
+### Owner Dashboard (Private CRM)
+- `/dashboard` — Leads inbox (redirects to login if not authenticated)
+- `/dashboard/login` — Login page (username: moose, password set via DASHBOARD_PASSWORD_HASH secret)
+- `/dashboard/:id` — Lead detail view with email/call/WhatsApp actions
+- iOS-inspired design: rounded cards, SF Pro font stack, `#F2F2F7` background, soft shadows
+- Auth: HMAC token stored in localStorage (`moose_dashboard_token`)
+- Read/unread state tracked in localStorage (`moose_read_leads`)
+
 ### API Endpoints
 - `GET /api/healthz` — Health check
 - `POST /api/quotes` — Submit a quote request
 - `GET /api/quotes` — List all quote submissions
 - `POST /api/contact` — Submit a contact message
+- `GET /api/contacts` — List all contact submissions (requires Bearer token)
+- `POST /api/dashboard/login` — Dashboard login (returns HMAC token)
 
 ### Database Tables
 - `quotes` — Quote submissions from the 5-step wizard
@@ -105,7 +115,8 @@ OpenAPI 3.1 spec at `openapi.yaml`. Endpoints: healthz, quotes, contact.
 Run codegen: `pnpm --filter @workspace/api-spec run codegen`
 
 ### `lib/api-zod` (`@workspace/api-zod`)
-Generated Zod schemas: `SubmitQuoteBody`, `GetQuotesResponse`, `SubmitContactBody`, `HealthCheckResponse`.
+Generated Zod schemas: `SubmitQuoteBody`, `GetQuotesResponse`, `SubmitContactBody`, `HealthCheckResponse`, `GetContactsResponse`.
 
 ### `lib/api-client-react` (`@workspace/api-client-react`)
-Generated React Query hooks: `useSubmitQuote`, `useGetQuotes`, `useSubmitContact`, `useHealthCheck`.
+Generated React Query hooks: `useSubmitQuote`, `useGetQuotes`, `useSubmitContact`, `useHealthCheck`, `useGetContacts`.
+Exports `setAuthTokenGetter` for global Bearer token injection.

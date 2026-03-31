@@ -63,6 +63,19 @@ export const GetQuotesResponseItem = zod.object({
 export const GetQuotesResponse = zod.array(GetQuotesResponseItem);
 
 /**
+ * @summary Get all contact submissions
+ */
+export const GetContactsResponseItem = zod.object({
+  id: zod.number(),
+  name: zod.string(),
+  email: zod.string(),
+  subject: zod.string().optional(),
+  message: zod.string(),
+  submittedAt: zod.coerce.date(),
+});
+export const GetContactsResponse = zod.array(GetContactsResponseItem);
+
+/**
  * @summary Submit a contact message
  */
 export const SubmitContactBody = zod.object({
