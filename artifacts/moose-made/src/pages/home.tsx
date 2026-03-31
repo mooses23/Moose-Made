@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, CheckCircle2, ChevronRight, Package, Truck, PenTool, Cpu, Box, Star } from "lucide-react";
+import { ArrowRight, ChevronRight, Truck, PenTool, Box, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MooseSilhouette } from "@/components/MooseLogo";
 
@@ -247,66 +247,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* AI TECH PREVIEW */}
-      <section className="py-24 text-primary-foreground" style={{ background: "hsl(210 35% 14%)" }}>
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div
-                className="inline-flex items-center gap-2 px-3 py-1 border text-xs font-medium uppercase tracking-widest mb-8"
-                style={{ background: "rgba(255,255,255,0.06)", borderColor: "rgba(255,255,255,0.15)", color: "hsl(34 85% 55%)" }}
-              >
-                <Cpu className="w-3 h-3" /> Proprietary Tech
-              </div>
-              <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6">Intelligence meets manufacturing.</h2>
-              <p className="text-lg mb-8 max-w-lg" style={{ color: "rgba(255,255,255,0.65)" }}>
-                We've built specialized AI tools to accelerate the packaging process, turning weeks of back-and-forth into minutes of precise generation.
-              </p>
-
-              <ul className="space-y-6">
-                {[
-                  "AI Dieline Assistant — Instant structural visualization from your mockup.",
-                  "Supplier Matching — We find the right factory for your project.",
-                  "Rapid Mockup Preview — See your packaging in 3D before anything is printed."
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-4" style={{ color: "rgba(255,255,255,0.85)" }}>
-                    <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "hsl(34 85% 55%)" }} />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div
-              className="p-8 md:p-12 relative overflow-hidden border"
-              style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.08)" }}
-            >
-              <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[100px]" style={{ background: "hsla(34,85%,38%,0.15)" }} />
-
-              <div className="space-y-4 relative z-10">
-                <div className="p-6 shadow-2xl border" style={{ background: "hsl(210 35% 10%)", borderColor: "rgba(255,255,255,0.08)" }}>
-                  <div className="flex items-center justify-between mb-4 pb-4 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-                    <span className="text-xs uppercase font-mono" style={{ color: "rgba(255,255,255,0.4)" }}>Module 01</span>
-                    <span className="text-xs px-2 py-1" style={{ background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.6)" }}>Online</span>
-                  </div>
-                  <h4 className="font-serif text-lg mb-2 text-white">AI Packaging Intake Assistant</h4>
-                  <p className="text-sm font-mono leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>System interpreting product dimensions &amp; weight... generating optimal structural brief.</p>
-                </div>
-
-                <div className="p-6 shadow-2xl border translate-x-4 opacity-70" style={{ background: "hsl(210 35% 10%)", borderColor: "rgba(255,255,255,0.08)" }}>
-                  <div className="flex items-center justify-between mb-4 pb-4 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-                    <span className="text-xs uppercase font-mono" style={{ color: "rgba(255,255,255,0.4)" }}>Module 05</span>
-                    <span className="text-xs px-2 py-1" style={{ background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.6)" }}>Processing</span>
-                  </div>
-                  <h4 className="font-serif text-lg mb-2 text-white">Photorealistic Mockup Generator</h4>
-                  <p className="text-sm font-mono leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>Applying matte texture &amp; gold foil stamping to 3D mesh...</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* PROCESS TIMELINE PREVIEW */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 md:px-12 text-center max-w-4xl">
@@ -352,15 +292,15 @@ export default function Home() {
             Ready to put your craft in packaging that's worthy of it?
           </h2>
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Get a detailed quote for your custom packaging project within 24 hours.
+            Reach out and we'll figure out the rest together.
           </p>
-          <Link to="/quote">
+          <Link to="/contact">
             <Button
               size="lg"
               className="rounded-none h-16 px-12 text-lg hover:opacity-90 transition-opacity"
               style={{ background: "hsl(210 35% 14%)", color: "hsl(38 30% 96%)" }}
             >
-              Start a Quote Request
+              Let's Talk
             </Button>
           </Link>
         </div>
