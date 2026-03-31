@@ -51,32 +51,36 @@
 }
 
 :root {
-  --background: 248 20% 97%;
-  --foreground: 220 15% 12%;
+  /* Warm cream background — like aged parchment */
+  --background: 38 30% 96%;
+  --foreground: 25 30% 10%;
   
-  --border: 240 10% 85%;
-  --input: 240 10% 85%;
-  --ring: 220 15% 12%;
+  --border: 30 20% 82%;
+  --input: 30 20% 82%;
+  --ring: 25 30% 10%;
 
-  --card: 0 0% 100%;
-  --card-foreground: 220 15% 12%;
-  --card-border: 240 10% 90%;
+  --card: 38 25% 99%;
+  --card-foreground: 25 30% 10%;
+  --card-border: 30 20% 88%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 220 15% 12%;
-  --popover-border: 240 10% 90%;
+  --popover: 38 25% 99%;
+  --popover-foreground: 25 30% 10%;
+  --popover-border: 30 20% 88%;
 
-  --primary: 220 15% 12%;
-  --primary-foreground: 248 20% 97%;
+  /* Deep forest navy — authoritative, established */
+  --primary: 210 35% 14%;
+  --primary-foreground: 38 30% 96%;
 
-  --secondary: 240 10% 92%;
-  --secondary-foreground: 220 15% 12%;
+  /* Warm oatmeal secondary */
+  --secondary: 35 20% 91%;
+  --secondary-foreground: 25 30% 10%;
 
-  --muted: 240 10% 90%;
-  --muted-foreground: 240 5% 40%;
+  --muted: 35 15% 88%;
+  --muted-foreground: 30 12% 42%;
 
-  --accent: 350 60% 35%;
-  --accent-foreground: 248 20% 97%;
+  /* Warm amber — American craft, warmth */
+  --accent: 34 85% 38%;
+  --accent-foreground: 38 30% 98%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@assets/F182B37E-7A36-4C46-BA4D-1AC7557158A2_1774933167810.png";
+import { MooseSilhouette } from "@/components/MooseLogo";
 
 const links = [
   { href: "/services", label: "Services" },
@@ -28,20 +28,24 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md border-border/50 py-3"
-          : "bg-transparent border-transparent py-5"
+          ? "bg-[hsl(210_35%_14%)] backdrop-blur-md border-white/10 py-3"
+          : "bg-[hsl(210_35%_14%)] border-white/10 py-5"
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 z-50 relative">
-          <img
-            src={logo}
-            alt="Moose Made"
-            className="h-8 md:h-10 w-auto object-contain dark:invert"
-          />
-          <span className="font-serif font-semibold text-xl hidden sm:block tracking-tight text-foreground">
-            Moose Made
-          </span>
+        {/* Logo lockup */}
+        <Link to="/" className="flex items-center gap-3 z-50 relative group">
+          <div className="flex items-center justify-center w-9 h-9 bg-accent/10 border border-accent/30 transition-all duration-300 group-hover:bg-accent/20">
+            <MooseSilhouette size={24} color="hsl(34 85% 55%)" />
+          </div>
+          <div className="flex flex-col leading-none">
+            <span className="font-serif font-semibold text-lg tracking-tight text-white">
+              Moose Made
+            </span>
+            <span className="text-[9px] uppercase tracking-[0.18em] text-white/40 font-medium mt-0.5 hidden sm:block">
+              American Craft Packaging
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -50,18 +54,18 @@ export function Navbar() {
             <Link
               key={link.href}
               to={link.href}
-              className={`text-sm font-medium transition-colors hover:text-accent ${
-                pathname === link.href ? "text-accent" : "text-muted-foreground"
+              className={`text-sm font-medium transition-colors hover:text-white ${
+                pathname === link.href ? "text-white" : "text-white/60"
               }`}
             >
               {link.label}
             </Link>
           ))}
           <div className="flex items-center gap-4 ml-4">
-            <Link to="/contact">
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-none group">
-                Let's Talk
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            <Link to="/quote">
+              <Button className="bg-accent text-accent-foreground hover:bg-accent/85 rounded-none group border-0 h-9 px-5">
+                Get a Quote
+                <ArrowRight className="w-3.5 h-3.5 ml-2 group-hover:translate-x-0.5 transition-transform" />
               </Button>
             </Link>
           </div>
@@ -69,7 +73,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden z-50 relative p-2 text-foreground"
+          className="md:hidden z-50 relative p-2 text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle Menu"
         >
@@ -78,7 +82,7 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 bg-background z-40 flex flex-col pt-24 px-6 transition-transform duration-300 md:hidden ${
+          className={`fixed inset-0 bg-[hsl(210_35%_11%)] z-40 flex flex-col pt-24 px-6 transition-transform duration-300 md:hidden ${
             mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -89,7 +93,7 @@ export function Navbar() {
                 to={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`transition-colors ${
-                  pathname === link.href ? "text-accent" : "text-foreground"
+                  pathname === link.href ? "text-accent" : "text-white"
                 }`}
               >
                 {link.label}
@@ -99,19 +103,30 @@ export function Navbar() {
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className={`transition-colors ${
-                pathname === "/contact" ? "text-accent" : "text-foreground"
+                pathname === "/contact" ? "text-accent" : "text-white"
               }`}
             >
               Contact
             </Link>
             <div className="mt-8">
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-none py-6 text-lg">
-                  Let's Talk
+              <Link to="/quote" onClick={() => setMobileMenuOpen(false)}>
+                <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/85 rounded-none py-6 text-lg">
+                  Start Your Project
                 </Button>
               </Link>
             </div>
           </nav>
+
+          {/* Mobile menu footer stamp */}
+          <div className="mt-auto pb-12">
+            <div className="border-t border-white/10 pt-6 flex items-center gap-3">
+              <MooseSilhouette size={28} color="hsl(34 85% 55%)" />
+              <div>
+                <p className="text-xs uppercase tracking-widest text-white/40 font-medium">American Craft Packaging</p>
+                <p className="text-white/60 text-sm mt-0.5">Est. in the USA</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
