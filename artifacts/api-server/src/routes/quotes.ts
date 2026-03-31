@@ -1,6 +1,7 @@
 import { Router, type IRouter } from "express";
 import { db, quotesTable } from "@workspace/db";
 import { SubmitQuoteBody, GetQuotesResponse } from "@workspace/api-zod";
+import { verifyToken } from "./dashboard";
 
 const router: IRouter = Router();
 
@@ -56,6 +57,17 @@ router.post("/quotes", async (req, res): Promise<void> => {
 });
 
 router.get("/quotes", async (req, res): Promise<void> => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    res.status(401).json({ error: "Unauthorized" });
+    return;
+  }
+  const token = authHeader.slice(7);
+  if (!verifyToken(token)) {
+    res.status(401).json({ error: "Unauthorized" });
+    return;
+  }
+
   const quotes = await db
     .select()
     .from(quotesTable)

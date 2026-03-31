@@ -4,13 +4,20 @@ import * as crypto from "crypto";
 const router: IRouter = Router();
 
 function getExpectedToken(): string {
-  const secret = process.env.SESSION_SECRET || "fallback-secret";
+  const secret = process.env.SESSION_SECRET;
+  if (!secret) {
+    throw new Error("SESSION_SECRET environment variable is required but was not provided.");
+  }
   return crypto.createHmac("sha256", secret).update("moose-dashboard-valid").digest("hex");
 }
 
 function verifyToken(token: string): boolean {
-  const expected = getExpectedToken();
-  return crypto.timingSafeEqual(Buffer.from(token, "hex"), Buffer.from(expected, "hex"));
+  try {
+    const expected = getExpectedToken();
+    return crypto.timingSafeEqual(Buffer.from(token, "hex"), Buffer.from(expected, "hex"));
+  } catch {
+    return false;
+  }
 }
 
 router.post("/dashboard/login", (req, res): void => {
@@ -22,7 +29,12 @@ router.post("/dashboard/login", (req, res): void => {
   }
 
   const expectedUsername = "moose";
-  const storedSecret = process.env.DASHBOARD_PASSWORD_HASH || "";
+  const storedSecret = (process.env.DASHBOARD_PASSWORD_HASH || "").trim();
+
+  if (!storedSecret) {
+    res.status(503).json({ error: "Dashboard credentials not configured" });
+    return;
+  }
 
   const inputHash = crypto.createHash("sha256").update(password).digest("hex");
   const storedHash = crypto.createHash("sha256").update(storedSecret).digest("hex");
@@ -38,8 +50,12 @@ router.post("/dashboard/login", (req, res): void => {
     return;
   }
 
-  const token = getExpectedToken();
-  res.json({ token });
+  try {
+    const token = getExpectedToken();
+    res.json({ token });
+  } catch {
+    res.status(503).json({ error: "Session secret not configured" });
+  }
 });
 
 export { verifyToken };
