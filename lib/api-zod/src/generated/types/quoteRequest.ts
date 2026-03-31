@@ -22,4 +22,5 @@ export interface QuoteRequest {
   materialPreferences?: string;
   structuralFeatures?: string;
   projectDescription?: string;
+  attachedFileNames?: string[];
 }

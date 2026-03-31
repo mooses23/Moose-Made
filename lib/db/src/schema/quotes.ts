@@ -1,4 +1,4 @@
-import { pgTable, text, serial, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, timestamp, jsonb } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod/v4";
 
@@ -19,6 +19,7 @@ export const quotesTable = pgTable("quotes", {
   materialPreferences: text("material_preferences"),
   structuralFeatures: text("structural_features"),
   projectDescription: text("project_description"),
+  attachedFileNames: jsonb("attached_file_names").$type<string[]>(),
   submittedAt: timestamp("submitted_at", { withTimezone: true }).notNull().defaultNow(),
 });
 

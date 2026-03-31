@@ -25,6 +25,7 @@ export interface QuoteRequest {
   materialPreferences?: string;
   structuralFeatures?: string;
   projectDescription?: string;
+  attachedFileNames?: string[];
 }
 
 export interface QuoteResponse {
@@ -44,6 +45,7 @@ export interface QuoteResponse {
   materialPreferences?: string;
   structuralFeatures?: string;
   projectDescription?: string;
+  attachedFileNames?: string[];
   submittedAt: string;
 }
 

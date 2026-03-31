@@ -1,13 +1,12 @@
 import { Link } from "wouter";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ArrowRight, CheckCircle2, ChevronRight, Package, Truck, PenTool, Cpu, Box } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Assets
-import imgDhaviFront from "@assets/IMG_1670_1774933091203.jpeg";
 import imgDhaviStand from "@assets/54618137-eed2-4ad1-903e-db0e609cdc76_1774933109680.jpeg";
 
-const fadeIn = {
+const fadeIn: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };

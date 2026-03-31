@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useSubmitQuote } from "@workspace/api-client-react";
-import { ArrowRight, ArrowLeft, CheckCircle2, Box } from "lucide-react";
+import { ArrowRight, ArrowLeft, CheckCircle2, Box, Upload, X, FileText } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -61,6 +61,25 @@ export default function Quote() {
   const submitQuote = useSubmitQuote();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files ?? []);
+    const allowed = files.filter(f => f.size <= 20 * 1024 * 1024);
+    if (allowed.length < files.length) {
+      toast({ title: "File too large", description: "Files must be under 20MB.", variant: "destructive" });
+    }
+    setAttachedFiles(prev => {
+      const names = new Set(prev.map(f => f.name));
+      return [...prev, ...allowed.filter(f => !names.has(f.name))];
+    });
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  };
+
+  const removeFile = (name: string) => {
+    setAttachedFiles(prev => prev.filter(f => f.name !== name));
+  };
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -113,7 +132,12 @@ export default function Quote() {
 
   const onSubmit = (data: FormValues) => {
     submitQuote.mutate(
-      { data },
+      {
+        data: {
+          ...data,
+          attachedFileNames: attachedFiles.length > 0 ? attachedFiles.map(f => f.name) : undefined,
+        },
+      },
       {
         onSuccess: () => {
           setIsSubmitted(true);
@@ -418,6 +442,51 @@ export default function Quote() {
                         <FormMessage />
                       </FormItem>
                     )} />
+
+                    <div className="space-y-3">
+                      <p className="text-sm font-medium leading-none">Reference Files (Optional)</p>
+                      <p className="text-xs text-muted-foreground">Upload brand guides, existing dielines, inspiration images, or any reference materials. PDF, PNG, JPG, AI, EPS — up to 20MB each.</p>
+                      
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        multiple
+                        accept=".pdf,.png,.jpg,.jpeg,.ai,.eps,.svg"
+                        onChange={handleFileSelect}
+                        className="sr-only"
+                        aria-label="Upload reference files"
+                      />
+
+                      <button
+                        type="button"
+                        onClick={() => fileInputRef.current?.click()}
+                        className="w-full border-2 border-dashed border-border hover:border-primary/50 hover:bg-secondary/50 transition-colors p-8 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      >
+                        <Upload className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
+                        <span className="text-sm font-medium text-muted-foreground">Click to attach files</span>
+                        <span className="block text-xs text-muted-foreground/70 mt-1">or drag and drop</span>
+                      </button>
+
+                      {attachedFiles.length > 0 && (
+                        <ul className="space-y-2">
+                          {attachedFiles.map(file => (
+                            <li key={file.name} className="flex items-center gap-3 bg-secondary border border-border px-4 py-3">
+                              <FileText className="w-4 h-4 text-accent shrink-0" />
+                              <span className="text-sm font-medium flex-1 truncate">{file.name}</span>
+                              <span className="text-xs text-muted-foreground shrink-0">{(file.size / 1024).toFixed(0)} KB</span>
+                              <button
+                                type="button"
+                                onClick={() => removeFile(file.name)}
+                                className="text-muted-foreground hover:text-destructive transition-colors ml-2 focus:outline-none"
+                                aria-label={`Remove ${file.name}`}
+                              >
+                                <X className="w-4 h-4" />
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               )}
@@ -457,6 +526,21 @@ export default function Quote() {
                     </div>
                   </div>
                   
+                  {attachedFiles.length > 0 && (
+                    <div className="bg-secondary border border-border p-6 mb-8">
+                      <h4 className="font-serif font-semibold text-lg border-b border-border/50 pb-2 mb-4">Attached Files ({attachedFiles.length})</h4>
+                      <ul className="space-y-2">
+                        {attachedFiles.map(file => (
+                          <li key={file.name} className="flex items-center gap-3 text-sm">
+                            <FileText className="w-4 h-4 text-accent shrink-0" />
+                            <span className="flex-1 truncate font-medium">{file.name}</span>
+                            <span className="text-muted-foreground">{(file.size / 1024).toFixed(0)} KB</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                   <div className="bg-primary/5 border border-primary/10 p-6 flex items-start gap-4">
                     <Box className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                     <p className="text-sm text-primary/80">

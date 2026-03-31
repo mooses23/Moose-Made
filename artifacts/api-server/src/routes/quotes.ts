@@ -29,6 +29,7 @@ router.post("/quotes", async (req, res): Promise<void> => {
       materialPreferences: parsed.data.materialPreferences ?? null,
       structuralFeatures: parsed.data.structuralFeatures ?? null,
       projectDescription: parsed.data.projectDescription ?? null,
+      attachedFileNames: parsed.data.attachedFileNames ?? null,
     })
     .returning();
 
@@ -49,6 +50,7 @@ router.post("/quotes", async (req, res): Promise<void> => {
     materialPreferences: quote.materialPreferences ?? undefined,
     structuralFeatures: quote.structuralFeatures ?? undefined,
     projectDescription: quote.projectDescription ?? undefined,
+    attachedFileNames: quote.attachedFileNames ?? undefined,
     submittedAt: quote.submittedAt.toISOString(),
   });
 });
@@ -76,6 +78,7 @@ router.get("/quotes", async (req, res): Promise<void> => {
     materialPreferences: q.materialPreferences ?? undefined,
     structuralFeatures: q.structuralFeatures ?? undefined,
     projectDescription: q.projectDescription ?? undefined,
+    attachedFileNames: q.attachedFileNames ?? undefined,
     submittedAt: q.submittedAt.toISOString(),
   }));
 

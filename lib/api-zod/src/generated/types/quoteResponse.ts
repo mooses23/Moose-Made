@@ -23,5 +23,6 @@ export interface QuoteResponse {
   materialPreferences?: string;
   structuralFeatures?: string;
   projectDescription?: string;
+  attachedFileNames?: string[];
   submittedAt: Date;
 }

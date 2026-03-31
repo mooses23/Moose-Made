@@ -34,6 +34,7 @@ export const SubmitQuoteBody = zod.object({
   materialPreferences: zod.string().optional(),
   structuralFeatures: zod.string().optional(),
   projectDescription: zod.string().optional(),
+  attachedFileNames: zod.array(zod.string()).optional(),
 });
 
 /**
@@ -56,6 +57,7 @@ export const GetQuotesResponseItem = zod.object({
   materialPreferences: zod.string().optional(),
   structuralFeatures: zod.string().optional(),
   projectDescription: zod.string().optional(),
+  attachedFileNames: zod.array(zod.string()).optional(),
   submittedAt: zod.coerce.date(),
 });
 export const GetQuotesResponse = zod.array(GetQuotesResponseItem);
