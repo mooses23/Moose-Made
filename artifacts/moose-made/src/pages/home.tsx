@@ -51,10 +51,10 @@ export default function Home() {
               initial="hidden" animate="visible" variants={stagger}
               className="max-w-2xl"
             >
-              {/* USA badge */}
+              {/* Brand badge */}
               <motion.div variants={fadeIn} className="inline-flex items-center gap-2.5 px-3 py-1.5 border border-accent/30 bg-accent/8 text-xs font-semibold uppercase tracking-widest mb-8" style={{ backgroundColor: "hsla(34,85%,38%,0.08)" }}>
                 <MooseSilhouette size={14} color="hsl(34 85% 38%)" />
-                <span style={{ color: "hsl(34 85% 30%)" }}>American-Made. Family-Owned.</span>
+                <span style={{ color: "hsl(34 85% 30%)" }}>Craft-Made. Family-Owned.</span>
               </motion.div>
 
               <motion.h1
@@ -77,7 +77,7 @@ export default function Home() {
                 className="text-lg md:text-xl mb-3 leading-relaxed max-w-lg font-medium"
                 style={{ color: "hsl(210 35% 14%)" }}
               >
-                Built right here in America, delivered to the world.
+                Crafted with precision, delivered to the world.
               </motion.p>
 
               <motion.p
@@ -189,7 +189,7 @@ export default function Home() {
       <section className="py-12 border-b border-border" style={{ background: "hsl(210 35% 14%)" }}>
         <div className="container mx-auto px-6 md:px-12 text-center">
           <p className="text-xs uppercase tracking-widest mb-8 font-medium" style={{ color: "hsl(34 85% 55%)" }}>
-            Trusted by emerging &amp; established American brands
+            Trusted by emerging &amp; established brands worldwide
           </p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24" style={{ opacity: 0.5 }}>
             <span className="font-serif text-2xl font-bold text-white">D'Havi</span>
@@ -210,7 +210,7 @@ export default function Home() {
                 Beyond printing.<br/>A full manufacturing partner.
               </h2>
               <p className="text-muted-foreground text-lg">
-                We don't just put ink on paper. We engineer structural dielines, match you with vetted suppliers, oversee quality control, and manage domestic fulfillment — so you can focus on growing your brand.
+                We don't just put ink on paper. We engineer structural dielines, match you with vetted suppliers, oversee quality control, and manage end-to-end fulfillment — so you can focus on growing your brand.
               </p>
             </div>
           </div>
@@ -286,7 +286,7 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 border text-xs font-semibold uppercase tracking-widest mb-8" style={{ borderColor: "hsl(34 85% 38% / 0.35)", color: "hsl(34 85% 30%)", background: "hsla(34,85%,38%,0.07)" }}>
             <MooseSilhouette size={12} color="hsl(34 85% 38%)" />
-            Proudly American. Globally Delivered.
+            Craft-Made. Globally Delivered.
           </div>
           <h2 className="text-4xl md:text-6xl font-serif font-semibold mb-8 max-w-3xl mx-auto leading-tight text-primary">
             Ready to put your craft in packaging that's worthy of it?

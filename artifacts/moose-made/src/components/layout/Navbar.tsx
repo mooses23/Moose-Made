@@ -43,7 +43,7 @@ export function Navbar() {
               Moose Made
             </span>
             <span className="text-[9px] uppercase tracking-[0.18em] text-white/40 font-medium mt-0.5 hidden sm:block">
-              American Craft Packaging
+              Craft Packaging Studio
             </span>
           </div>
         </Link>
@@ -122,8 +122,8 @@ export function Navbar() {
             <div className="border-t border-white/10 pt-6 flex items-center gap-3">
               <MooseSilhouette size={28} color="hsl(34 85% 55%)" />
               <div>
-                <p className="text-xs uppercase tracking-widest text-white/40 font-medium">American Craft Packaging</p>
-                <p className="text-white/60 text-sm mt-0.5">Est. in the USA</p>
+                <p className="text-xs uppercase tracking-widest text-white/40 font-medium">Craft Packaging Studio</p>
+                <p className="text-white/60 text-sm mt-0.5">Family-Owned &amp; Global</p>
               </div>
             </div>
           </div>

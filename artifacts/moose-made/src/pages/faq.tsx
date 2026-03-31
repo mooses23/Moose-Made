@@ -36,7 +36,7 @@ const faqs = [
       },
       {
         q: "Where is your packaging manufactured?",
-        a: "We are manufacturer-agnostic. We maintain a vetted network of partner facilities both domestically (US/Canada) and overseas (Asia, Europe). We recommend the facility that best balances your requirements for quality, budget, and lead time."
+        a: "We are manufacturer-agnostic. We maintain a vetted network of partner facilities globally — spanning Asia, Europe, and beyond. We recommend the facility that best balances your requirements for quality, budget, and lead time."
       },
       {
         q: "Do you offer eco-friendly or sustainable materials?",
