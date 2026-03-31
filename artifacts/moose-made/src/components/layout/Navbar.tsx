@@ -109,9 +109,9 @@ export function Navbar() {
               Contact
             </Link>
             <div className="mt-8">
-              <Link to="/quote" onClick={() => setMobileMenuOpen(false)}>
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                 <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/85 rounded-none py-6 text-lg">
-                  Start Your Project
+                  Let's Talk
                 </Button>
               </Link>
             </div>
