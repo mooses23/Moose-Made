@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import imgDhaviFront from "@assets/IMG_1670_1774933091203.jpeg";
 
@@ -57,7 +57,7 @@ export default function Portfolio() {
           {projects.map((project, i) => (
             <Link 
               key={project.id} 
-              href={project.id === "dhavi-spelt-bagels" ? `/portfolio/${project.id}` : "#"}
+              to={project.id === "dhavi-spelt-bagels" ? `/portfolio/${project.id}` : "#"}
               className={`group block ${project.featured ? 'md:col-span-2' : ''}`}
             >
               <div className="relative overflow-hidden bg-secondary border border-border">

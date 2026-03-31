@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { PenTool, Box, Layers, Globe, CheckSquare, Truck, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -105,7 +105,7 @@ export default function Services() {
       {/* CTA */}
       <section className="container mx-auto px-6 md:px-12 mt-32 text-center">
         <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-8">Have a specific project in mind?</h2>
-        <Link href="/quote">
+        <Link to="/quote">
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none h-14 px-10 text-base">
             Get a Detailed Quote
             <ArrowRight className="w-4 h-4 ml-2" />

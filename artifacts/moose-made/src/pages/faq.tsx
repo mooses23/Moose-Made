@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import {
@@ -98,12 +98,12 @@ export default function Faq() {
           <h3 className="text-2xl font-serif font-semibold mb-4">Still have questions?</h3>
           <p className="text-muted-foreground mb-8">We're happy to discuss the specifics of your project.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link to="/contact">
               <Button variant="outline" className="w-full sm:w-auto rounded-none border-border h-12 px-8 bg-transparent hover:bg-background">
                 Contact Us
               </Button>
             </Link>
-            <Link href="/quote">
+            <Link to="/quote">
               <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground rounded-none h-12 px-8">
                 Request a Quote <ArrowRight className="w-4 h-4 ml-2" />
               </Button>

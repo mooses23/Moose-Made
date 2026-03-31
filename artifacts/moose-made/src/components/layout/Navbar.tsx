@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@assets/F182B37E-7A36-4C46-BA4D-1AC7557158A2_1774933167810.png";
@@ -12,7 +12,7 @@ const links = [
 ];
 
 export function Navbar() {
-  const [location] = useLocation();
+  const { pathname } = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -33,11 +33,11 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 z-50 relative">
-          <img 
-            src={logo} 
-            alt="Moose Made" 
-            className="h-8 md:h-10 w-auto object-contain dark:invert" 
+        <Link to="/" className="flex items-center gap-2 z-50 relative">
+          <img
+            src={logo}
+            alt="Moose Made"
+            className="h-8 md:h-10 w-auto object-contain dark:invert"
           />
           <span className="font-serif font-semibold text-xl hidden sm:block tracking-tight text-foreground">
             Moose Made
@@ -49,16 +49,16 @@ export function Navbar() {
           {links.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className={`text-sm font-medium transition-colors hover:text-accent ${
-                location === link.href ? "text-accent" : "text-muted-foreground"
+                pathname === link.href ? "text-accent" : "text-muted-foreground"
               }`}
             >
               {link.label}
             </Link>
           ))}
           <div className="flex items-center gap-4 ml-4">
-            <Link href="/quote">
+            <Link to="/quote">
               <Button className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-none group">
                 Get a Quote
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -86,26 +86,26 @@ export function Navbar() {
             {links.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`transition-colors ${
-                  location === link.href ? "text-accent" : "text-foreground"
+                  pathname === link.href ? "text-accent" : "text-foreground"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              href="/contact"
+              to="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className={`transition-colors ${
-                location === "/contact" ? "text-accent" : "text-foreground"
+                pathname === "/contact" ? "text-accent" : "text-foreground"
               }`}
             >
               Contact
             </Link>
             <div className="mt-8">
-              <Link href="/quote" onClick={() => setMobileMenuOpen(false)}>
+              <Link to="/quote" onClick={() => setMobileMenuOpen(false)}>
                 <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-none py-6 text-lg">
                   Start Your Project
                 </Button>

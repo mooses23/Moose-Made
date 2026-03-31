@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useForm } from "react-hook-form";
+import { useForm, type FieldPath } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useSubmitQuote } from "@workspace/api-client-react";
@@ -104,15 +104,14 @@ export default function Quote() {
   });
 
   const triggerStepValidation = async () => {
-    let fieldsToValidate: any[] = [];
-    
-    if (currentStep === 1) fieldsToValidate = ["firstName", "lastName", "email"];
-    if (currentStep === 2) fieldsToValidate = ["productCategory", "packagingType"];
-    if (currentStep === 3) fieldsToValidate = ["quantity"];
-    
-    if (fieldsToValidate.length > 0) {
-      const isValid = await form.trigger(fieldsToValidate as any);
-      return isValid;
+    const stepFields: Record<number, FieldPath<FormValues>[]> = {
+      1: ["firstName", "lastName", "email"],
+      2: ["productCategory", "packagingType"],
+      3: ["quantity"],
+    };
+    const fieldsToValidate = stepFields[currentStep];
+    if (fieldsToValidate && fieldsToValidate.length > 0) {
+      return form.trigger(fieldsToValidate);
     }
     return true;
   };

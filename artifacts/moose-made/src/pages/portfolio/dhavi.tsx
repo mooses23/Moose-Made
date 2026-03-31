@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -15,7 +15,7 @@ export default function PortfolioDhavi() {
       {/* Hero Header */}
       <section className="pt-12 pb-16 border-b border-border">
         <div className="container mx-auto px-6 md:px-12">
-          <Link href="/portfolio" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-12">
+          <Link to="/portfolio" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-12">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Portfolio
           </Link>
           
@@ -134,7 +134,7 @@ export default function PortfolioDhavi() {
 
       <section className="container mx-auto px-6 md:px-12 pt-24 text-center">
         <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-8">Want results like this?</h2>
-        <Link href="/quote">
+        <Link to="/quote">
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none h-14 px-10 text-base">
             Start Your Project
             <ArrowRight className="w-4 h-4 ml-2" />

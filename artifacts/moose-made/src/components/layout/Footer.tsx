@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import logo from "@assets/F182B37E-7A36-4C46-BA4D-1AC7557158A2_1774933167810.png";
 
@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-16">
           <div className="md:col-span-5 flex flex-col items-start">
-            <Link href="/" className="mb-8 block">
+            <Link to="/" className="mb-8 block">
               <img 
                 src={logo} 
                 alt="Moose Made Logo" 
@@ -21,7 +21,7 @@ export function Footer() {
             <p className="text-primary-foreground/60 mb-8 max-w-md text-sm leading-relaxed">
               We manage the complexity of structural design, dieline creation, global sourcing, and fulfillment so you can focus on building your brand.
             </p>
-            <Link href="/quote" className="inline-flex items-center text-accent font-medium hover:text-white transition-colors group">
+            <Link to="/quote" className="inline-flex items-center text-accent font-medium hover:text-white transition-colors group">
               Start your packaging project
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -30,20 +30,20 @@ export function Footer() {
           <div className="md:col-span-2">
             <h4 className="font-medium text-sm tracking-wider uppercase mb-6 text-primary-foreground/40">Company</h4>
             <ul className="space-y-4 text-sm text-primary-foreground/80">
-              <li><Link href="/about" className="hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="hover:text-accent transition-colors">Services</Link></li>
-              <li><Link href="/portfolio" className="hover:text-accent transition-colors">Our Work</Link></li>
-              <li><Link href="/blog" className="hover:text-accent transition-colors">Journal</Link></li>
+              <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="hover:text-accent transition-colors">Services</Link></li>
+              <li><Link to="/portfolio" className="hover:text-accent transition-colors">Our Work</Link></li>
+              <li><Link to="/blog" className="hover:text-accent transition-colors">Journal</Link></li>
             </ul>
           </div>
 
           <div className="md:col-span-2">
             <h4 className="font-medium text-sm tracking-wider uppercase mb-6 text-primary-foreground/40">Resources</h4>
             <ul className="space-y-4 text-sm text-primary-foreground/80">
-              <li><Link href="/how-it-works" className="hover:text-accent transition-colors">How it Works</Link></li>
-              <li><Link href="/faq" className="hover:text-accent transition-colors">FAQ</Link></li>
-              <li><Link href="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
-              <li><Link href="/quote" className="hover:text-accent transition-colors">Get a Quote</Link></li>
+              <li><Link to="/how-it-works" className="hover:text-accent transition-colors">How it Works</Link></li>
+              <li><Link to="/faq" className="hover:text-accent transition-colors">FAQ</Link></li>
+              <li><Link to="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
+              <li><Link to="/quote" className="hover:text-accent transition-colors">Get a Quote</Link></li>
             </ul>
           </div>
 

@@ -1,4 +1,4 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,33 +18,29 @@ import Blog from "@/pages/blog";
 
 const queryClient = new QueryClient();
 
-function Router() {
-  return (
-    <MainLayout>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/services" component={Services} />
-        <Route path="/how-it-works" component={HowItWorks} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/faq" component={Faq} />
-        <Route path="/quote" component={Quote} />
-        <Route path="/portfolio" component={Portfolio} />
-        <Route path="/portfolio/dhavi-spelt-bagels" component={PortfolioDhavi} />
-        <Route path="/blog" component={Blog} />
-        <Route component={NotFound} />
-      </Switch>
-    </MainLayout>
-  );
-}
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-          <Router />
-        </WouterRouter>
+        <BrowserRouter basename={basePath}>
+          <MainLayout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/faq" element={<Faq />} />
+              <Route path="/quote" element={<Quote />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/portfolio/dhavi-spelt-bagels" element={<PortfolioDhavi />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </MainLayout>
+        </BrowserRouter>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -97,7 +97,7 @@ export default function HowItWorks() {
             <h3 className="text-2xl font-serif font-semibold mb-2">Ready to start step 01?</h3>
             <p className="text-muted-foreground">Submit your project details and we'll get back to you within 24 hours.</p>
           </div>
-          <Link href="/quote">
+          <Link to="/quote">
             <Button size="lg" className="bg-accent hover:bg-accent/90 text-white rounded-none h-14 px-8 whitespace-nowrap">
               Begin Discovery <ArrowRight className="w-4 h-4 ml-2" />
             </Button>

@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight, CheckCircle2, ChevronRight, Package, Truck, PenTool, Cpu, Box } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -42,12 +42,12 @@ export default function Home() {
                 We bridge the gap between creative vision and industrial reality. Concept, dieline, sourcing, and fulfillment—engineered for scale, crafted with intention.
               </motion.p>
               <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-                <Link href="/quote">
+                <Link to="/quote">
                   <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground rounded-none h-14 px-8 text-base">
                     Start Your Project
                   </Button>
                 </Link>
-                <Link href="/portfolio">
+                <Link to="/portfolio">
                   <Button variant="outline" size="lg" className="w-full sm:w-auto rounded-none h-14 px-8 text-base border-border bg-transparent hover:bg-secondary">
                     View Our Work
                   </Button>
@@ -70,7 +70,7 @@ export default function Home() {
               <div className="absolute bottom-10 left-10 z-30 bg-white p-5 max-w-xs shadow-xl">
                 <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Featured Case Study</p>
                 <h3 className="font-serif text-xl font-semibold mb-2">D'Havi Artisanal</h3>
-                <Link href="/portfolio/dhavi-spelt-bagels" className="text-sm font-medium flex items-center text-accent hover:text-primary transition-colors">
+                <Link to="/portfolio/dhavi-spelt-bagels" className="text-sm font-medium flex items-center text-accent hover:text-primary transition-colors">
                   Read Case Study <ChevronRight className="w-4 h-4 ml-1" />
                 </Link>
               </div>
@@ -202,7 +202,7 @@ export default function Home() {
             ))}
           </div>
           
-          <Link href="/how-it-works">
+          <Link to="/how-it-works">
             <Button variant="link" className="text-primary hover:text-accent font-medium text-base h-auto p-0 group">
               Explore the full process 
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -216,7 +216,7 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <h2 className="text-4xl md:text-6xl font-serif font-semibold mb-8 max-w-3xl mx-auto leading-tight">Ready to elevate your product's presentation?</h2>
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">Get a detailed quote for your custom packaging project within 24 hours.</p>
-          <Link href="/quote">
+          <Link to="/quote">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none h-16 px-12 text-lg">
               Start a Quote Request
             </Button>
