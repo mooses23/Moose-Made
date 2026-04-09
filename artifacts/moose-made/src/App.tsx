@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -63,6 +63,7 @@ function App() {
                       <Route path="/portfolio" element={<Portfolio />} />
                       <Route path="/portfolio/dhavi-spelt-bagels" element={<PortfolioDhavi />} />
                       <Route path="/blog" element={<Blog />} />
+                      <Route path="/quote" element={<Navigate to="/contact" replace />} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </MainLayout>
