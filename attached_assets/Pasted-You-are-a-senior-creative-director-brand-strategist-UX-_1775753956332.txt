@@ -1,0 +1,163 @@
+You are a senior creative director, brand strategist, UX leader, and full-stack engineer.
+
+You are part of an elite product team.
+
+We trust your judgment.
+
+Your task:
+Transform moose-made.com into a website that clearly communicates a powerful idea:
+
+Moose-Made turns ideas into real physical products.
+
+We are not a wood shop.
+We are not a product store.
+
+We are a concept-to-doorstep execution partner.
+
+We help founders, creators, and small brands bring physical products into the real world.
+
+From idea → design → sourcing → manufacturing → delivered product.
+
+We remove the complexity of factories, materials, prototyping, packaging, and logistics.
+
+The site must communicate quiet competence.
+
+The visitor should feel:
+
+“These people know how to get things made.”
+“They can handle complexity.”
+“I can trust them with my idea.”
+“This saves me months of frustration.”
+
+The website should feel confident and restrained.
+
+We are not loud.
+We are capable.
+
+Avoid generic marketing language.
+
+Communicate clarity of thinking.
+
+Do not make the site feel like a store.
+
+Make it feel like a partner.
+
+Structure the experience so visitors quickly understand:
+
+what Moose-Made does
+who it is for
+what problems it solves
+how the process works
+how to start
+
+Encourage high-quality clients.
+
+Discourage low-intent shoppers.
+
+We want serious inquiries.
+
+We are building long-term trust.
+
+Use your judgment to:
+
+clarify messaging
+simplify structure
+improve flow
+increase perceived credibility
+increase perceived competence
+reduce friction to start a conversation
+
+The site should feel:
+
+calm
+capable
+precise
+intentional
+
+Guide the visitor through a narrative:
+
+Ideas are easy.
+Execution is hard.
+Moose-Made solves execution.
+
+Help the visitor imagine their idea becoming real.
+
+Incorporate a clear explanation of the journey:
+
+concept
+design
+engineering
+manufacturing
+quality control
+delivery
+
+Help visitors understand:
+
+they do not need to know factories
+materials
+or manufacturing
+
+We handle complexity.
+
+Encourage visitors to submit project ideas.
+
+Make the intake experience feel professional and simple.
+
+Use structure that supports long-term brand credibility.
+
+We are building trust, not chasing clicks.
+
+Avoid gimmicks.
+
+Avoid trendy startup clichés.
+
+Avoid clutter.
+
+Avoid visual noise.
+
+Prioritize clarity of purpose.
+
+Assume this site will grow into a serious product development brand.
+
+Build with scalability in mind.
+
+Ensure the site can expand into multiple industries:
+
+packaging
+consumer goods
+custom physical products
+private label concepts
+small batch production
+idea validation prototypes
+
+The site should not limit Moose-Made to one category.
+
+Use architecture that allows adding case studies later.
+
+Highlight capability without exaggeration.
+
+Understate rather than overstate.
+
+Strong brands do not oversell.
+
+They demonstrate.
+
+Design the flow so future project examples can be inserted seamlessly.
+
+Ensure the site is deployable on Vercel.
+
+Avoid platform lock-in.
+
+Build clean architecture.
+
+Use components that allow future iteration.
+
+Your objective is to elevate perception.
+
+We want visitors to think:
+
+“I didn’t know this kind of partner existed.”
+
+Deliver a production-ready implementation.
+
+Make decisions confidently.
