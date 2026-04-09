@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm --filter @workspace/moose-made run build",
+  "buildCommand": "pnpm --filter @workspace/moose-made run build && pnpm --filter @workspace/api-server run build",
   "outputDirectory": "artifacts/moose-made/dist/public",
   "rewrites": [
     { "source": "/api/:path*", "destination": "/api/index" }
