@@ -3,28 +3,28 @@ import { ArrowRight } from "lucide-react";
 
 const articles = [
   {
-    title: "Folding Carton vs. Corrugated: When to use which?",
-    excerpt: "Understanding the structural differences, cost implications, and retail performance of the two most common paper-based packaging formats.",
-    category: "Technical Guide",
-    date: "Oct 12, 2023"
+    title: "What founders get wrong about physical product timelines",
+    excerpt: "Design is only one piece of it. Engineering, tooling, sampling, production, and freight each add time — and most first-time founders discover this too late. Here's a realistic breakdown.",
+    category: "Execution Guide",
+    date: "Mar 18, 2024"
   },
   {
-    title: "The hidden costs of overseas packaging manufacturing",
-    excerpt: "Unit cost is only one piece of the puzzle. Freight, customs, tooling, and communication delays can quickly erode the savings of manufacturing abroad.",
+    title: "The hidden costs of overseas manufacturing",
+    excerpt: "Unit cost is only one number. Freight, customs, tooling, quality failures, and communication delays can erode margins quickly. What to factor in before you commit to a supplier.",
     category: "Supply Chain",
-    date: "Sep 28, 2023"
+    date: "Feb 5, 2024"
   },
   {
-    title: "Designing for Unboxing: The psychological impact of friction",
-    excerpt: "How the physical resistance of a box lid or the sound of tearing a seal affects a consumer's perception of product value.",
-    category: "Design Theory",
-    date: "Sep 15, 2023"
+    title: "How to evaluate a manufacturer before you place an order",
+    excerpt: "A factory's price sheet tells you almost nothing. What to look for — and what questions to ask — when vetting a production partner for the first time.",
+    category: "Sourcing",
+    date: "Jan 22, 2024"
   },
   {
-    title: "A primer on packaging finishes: Foil, Spot UV, and Embossing",
-    excerpt: "A visual guide to premium finishes, how they are applied on the factory floor, and when to specify them on your dielines.",
+    title: "When to prototype and when to go straight to production",
+    excerpt: "Sampling costs money and time. So does fixing a production run that went wrong. Understanding when prototyping is essential — and when it's safe to skip — can save both.",
     category: "Manufacturing",
-    date: "Aug 30, 2023"
+    date: "Dec 10, 2023"
   }
 ];
 
@@ -37,7 +37,7 @@ export default function Blog() {
             The <span className="text-accent italic font-light">Journal</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Technical guides, industry insights, and philosophical musings on the art of physical manufacturing.
+            Practical insights on physical product development — manufacturing, sourcing, materials, and the execution side of bringing ideas to market.
           </p>
         </div>
       </section>

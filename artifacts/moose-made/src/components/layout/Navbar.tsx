@@ -7,7 +7,7 @@ import { MooseSilhouette } from "@/components/MooseLogo";
 const links = [
   { href: "/services", label: "Services" },
   { href: "/how-it-works", label: "Process" },
-  { href: "/portfolio", label: "Work" },
+  { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
 ];
 
@@ -43,7 +43,7 @@ export function Navbar() {
               Moose Made
             </span>
             <span className="text-[9px] uppercase tracking-[0.18em] text-white/40 font-medium mt-0.5 hidden sm:block">
-              Craft Packaging Studio
+              Product Execution Partner
             </span>
           </div>
         </Link>
@@ -55,7 +55,7 @@ export function Navbar() {
               key={link.href}
               to={link.href}
               className={`text-sm font-medium transition-colors hover:text-white ${
-                pathname === link.href ? "text-white" : "text-white/60"
+                pathname === link.href || pathname.startsWith(link.href + "/") ? "text-white" : "text-white/60"
               }`}
             >
               {link.label}
@@ -68,9 +68,9 @@ export function Navbar() {
             >
               Login
             </Link>
-            <Link to="/quote">
+            <Link to="/contact">
               <Button className="bg-accent text-accent-foreground hover:bg-accent/85 rounded-none group border-0 h-9 px-5">
-                Get a Quote
+                Start a Conversation
                 <ArrowRight className="w-3.5 h-3.5 ml-2 group-hover:translate-x-0.5 transition-transform" />
               </Button>
             </Link>
@@ -126,7 +126,7 @@ export function Navbar() {
             <div className="mt-8">
               <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                 <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/85 rounded-none py-6 text-lg">
-                  Let's Talk
+                  Start a Conversation
                 </Button>
               </Link>
             </div>
@@ -137,8 +137,8 @@ export function Navbar() {
             <div className="border-t border-white/10 pt-6 flex items-center gap-3">
               <MooseSilhouette size={28} color="hsl(34 85% 55%)" />
               <div>
-                <p className="text-xs uppercase tracking-widest text-white/40 font-medium">Craft Packaging Studio</p>
-                <p className="text-white/60 text-sm mt-0.5">Family-Owned &amp; Global</p>
+                <p className="text-xs uppercase tracking-widest text-white/40 font-medium">Product Execution Partner</p>
+                <p className="text-white/60 text-sm mt-0.5">Concept to Doorstep</p>
               </div>
             </div>
           </div>

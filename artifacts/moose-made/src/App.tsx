@@ -60,8 +60,10 @@ function App() {
                       <Route path="/about" element={<About />} />
                       <Route path="/contact" element={<Contact />} />
                       <Route path="/faq" element={<Faq />} />
-                      <Route path="/portfolio" element={<Portfolio />} />
-                      <Route path="/portfolio/dhavi-spelt-bagels" element={<PortfolioDhavi />} />
+                      <Route path="/work" element={<Portfolio />} />
+                      <Route path="/work/dhavi-spelt-bagels" element={<PortfolioDhavi />} />
+                      <Route path="/portfolio" element={<Navigate to="/work" replace />} />
+                      <Route path="/portfolio/dhavi-spelt-bagels" element={<Navigate to="/work/dhavi-spelt-bagels" replace />} />
                       <Route path="/blog" element={<Blog />} />
                       <Route path="/quote" element={<Navigate to="/contact" replace />} />
                       <Route path="*" element={<NotFound />} />

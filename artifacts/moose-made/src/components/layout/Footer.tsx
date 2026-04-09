@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Mail, Phone } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import logo from "@assets/F182B37E-7A36-4C46-BA4D-1AC7557158A2_1774933167810.png";
 
 export function Footer() {
@@ -9,20 +9,20 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-16">
           <div className="md:col-span-5 flex flex-col items-start">
             <Link to="/" className="mb-8 block">
-              <img 
-                src={logo} 
-                alt="Moose Made Logo" 
-                className="h-12 w-auto invert opacity-90" 
+              <img
+                src={logo}
+                alt="Moose Made Logo"
+                className="h-12 w-auto invert opacity-90"
               />
             </Link>
             <h3 className="text-2xl font-serif mb-6 leading-tight max-w-md">
-              Got a mockup you made with AI? Let's bring it to life.
+              A concept-to-doorstep execution partner for physical products.
             </h3>
             <p className="text-primary-foreground/60 mb-8 max-w-md text-sm leading-relaxed">
-              We're a small team that loves turning creative ideas into real, physical packaging. Just reach out — we'll figure it out together.
+              We handle the full physical product journey — concept, design, engineering, manufacturing, QC, and delivery — so you can focus on building your brand.
             </p>
             <Link to="/contact" className="inline-flex items-center text-accent font-medium hover:text-white transition-colors group">
-              Get in touch
+              Start a conversation
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -30,9 +30,9 @@ export function Footer() {
           <div className="md:col-span-2">
             <h4 className="font-medium text-sm tracking-wider uppercase mb-6 text-primary-foreground/40">Company</h4>
             <ul className="space-y-4 text-sm text-primary-foreground/80">
-              <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
+              <li><Link to="/about" className="hover:text-accent transition-colors">About</Link></li>
               <li><Link to="/services" className="hover:text-accent transition-colors">Services</Link></li>
-              <li><Link to="/portfolio" className="hover:text-accent transition-colors">Our Work</Link></li>
+              <li><Link to="/work" className="hover:text-accent transition-colors">Our Work</Link></li>
               <li><Link to="/blog" className="hover:text-accent transition-colors">Journal</Link></li>
             </ul>
           </div>
@@ -40,7 +40,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <h4 className="font-medium text-sm tracking-wider uppercase mb-6 text-primary-foreground/40">Resources</h4>
             <ul className="space-y-4 text-sm text-primary-foreground/80">
-              <li><Link to="/how-it-works" className="hover:text-accent transition-colors">How it Works</Link></li>
+              <li><Link to="/how-it-works" className="hover:text-accent transition-colors">How It Works</Link></li>
               <li><Link to="/faq" className="hover:text-accent transition-colors">FAQ</Link></li>
               <li><Link to="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
             </ul>
@@ -51,10 +51,6 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-primary-foreground/80">
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 mt-0.5 opacity-60" />
-                <a href="mailto:hello@moose-made.com" className="hover:text-accent transition-colors">hello@moose-made.com</a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="w-4 h-4 mt-0.5 opacity-60" />
                 <a href="mailto:hello@moose-made.com" className="hover:text-accent transition-colors">hello@moose-made.com</a>
               </li>
               <li className="flex items-start gap-3">

@@ -15,18 +15,19 @@ export default function PortfolioDhavi() {
       {/* Hero Header */}
       <section className="pt-12 pb-16 border-b border-border">
         <div className="container mx-auto px-6 md:px-12">
-          <Link to="/portfolio" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-12">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Back to Portfolio
+          <Link to="/work" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-12">
+            <ArrowLeft className="w-4 h-4 mr-2" /> Back to Case Studies
           </Link>
-          
+
           <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-end">
             <div>
+              <p className="text-xs uppercase tracking-widest font-semibold mb-4" style={{ color: "hsl(34 85% 38%)" }}>Food &amp; Beverage — Flexible Packaging</p>
               <h1 className="text-5xl md:text-7xl font-serif font-semibold leading-[1.1] mb-6 text-primary">
                 D'Havi <br />
                 <span className="text-accent italic font-light">Artisanal</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Premium spelt bagels required packaging that communicated heritage while functioning in modern retail environments.
+                A premium artisanal product was losing shelf credibility behind packaging that didn't match its quality. We rebuilt that presentation from scratch — engineering, sourcing, and producing a pouch that lets the product speak for itself.
               </p>
             </div>
             <div className="bg-secondary p-8 border border-border">
@@ -36,16 +37,16 @@ export default function PortfolioDhavi() {
                   <dd className="font-medium">D'Havi</dd>
                 </div>
                 <div>
-                  <dt className="text-muted-foreground mb-1 uppercase tracking-widest text-xs">Format</dt>
+                  <dt className="text-muted-foreground mb-1 uppercase tracking-widest text-xs">Product Format</dt>
                   <dd className="font-medium">Stand-up Resealable Pouch</dd>
                 </div>
                 <div>
-                  <dt className="text-muted-foreground mb-1 uppercase tracking-widest text-xs">Finishes</dt>
-                  <dd className="font-medium">Matte black, Clear window</dd>
+                  <dt className="text-muted-foreground mb-1 uppercase tracking-widest text-xs">Category</dt>
+                  <dd className="font-medium">Food &amp; Beverage</dd>
                 </div>
                 <div>
-                  <dt className="text-muted-foreground mb-1 uppercase tracking-widest text-xs">Services</dt>
-                  <dd className="font-medium">Dieline, Sourcing, Production</dd>
+                  <dt className="text-muted-foreground mb-1 uppercase tracking-widest text-xs">Stages Handled</dt>
+                  <dd className="font-medium">Design, Engineering, Sourcing, Production, QC</dd>
                 </div>
               </dl>
             </div>
@@ -56,7 +57,7 @@ export default function PortfolioDhavi() {
       {/* Main Image */}
       <section className="container mx-auto px-6 md:px-12 py-12">
         <div className="aspect-[16/9] bg-secondary border border-border overflow-hidden">
-          <img src={img2} alt="D'Havi Spelt Bagels Packaging on counter" className="w-full h-full object-cover" />
+          <img src={img2} alt="D'Havi Artisanal product on counter" className="w-full h-full object-cover" />
         </div>
       </section>
 
@@ -64,21 +65,21 @@ export default function PortfolioDhavi() {
       <section className="container mx-auto px-6 md:px-12 py-16">
         <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
           <div>
-            <h2 className="text-3xl font-serif font-semibold mb-6">The Challenge</h2>
+            <h2 className="text-3xl font-serif font-semibold mb-6">The Execution Challenge</h2>
             <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
-              D'Havi produces high-quality artisanal spelt bagels. Their previous packaging felt generic and failed to justify the premium price point on retail shelves. The bagels themselves are beautiful and rustic, but were hidden behind opaque or poorly designed plastic.
+              D'Havi produces high-quality artisanal spelt bagels. Their previous packaging felt generic and failed to communicate the premium price point on retail shelves. The product itself was exceptional — but buyers couldn't see that from the outside.
             </p>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              They needed a pouch that kept the product fresh, allowed the consumer to see the actual bagels, and visually communicated a "premium artisanal" aesthetic that stood out against brightly colored mass-market bread products.
+              They needed more than a design refresh. They needed a complete product packaging execution: the right structure, the right materials, a supplier who could deliver on quality, and production oversight to make sure it arrived as intended.
             </p>
           </div>
           <div>
-            <h2 className="text-3xl font-serif font-semibold mb-6">The Solution</h2>
+            <h2 className="text-3xl font-serif font-semibold mb-6">What We Built</h2>
             <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
-              We engineered a heavy-gauge, matte black stand-up pouch. The deep black creates a stark, elegant contrast against the warm, golden-brown colors of the spelt bagels inside.
+              We engineered a heavy-gauge, matte black stand-up pouch. The deep black creates a stark, elegant contrast against the warm, golden-brown colors of the spelt bagels inside. A strategically placed clear window allows the product to sell itself.
             </p>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              A carefully placed clear window allows the product to sell itself. We incorporated a deep burgundy-red accent band to anchor the design, paired with classic gold serif typography. A heavy-duty resealable zipper ensures the product remains fresh after opening.
+              We sourced a supplier with the capability to execute the matte film specification at the required volume, managed sampling and approval rounds, and oversaw the production run to ensure consistency across every unit.
             </p>
           </div>
         </div>
@@ -97,35 +98,35 @@ export default function PortfolioDhavi() {
             <img src={img6} alt="Side profile" className="w-full h-full object-cover" />
           </div>
           <div className="aspect-square bg-secondary border border-border overflow-hidden">
-            <img src={img3} alt="Back nutrition panel" className="w-full h-full object-cover" />
+            <img src={img3} alt="Back panel" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
 
-      {/* Key Features */}
+      {/* Key Details */}
       <section className="container mx-auto px-6 md:px-12 py-16">
         <div className="bg-primary text-primary-foreground p-12 md:p-20">
-          <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-12 text-center">Structural Details</h2>
+          <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-12 text-center">Engineering Details</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <CheckCircle2 className="w-6 h-6 text-accent mb-4" />
               <h4 className="font-medium text-lg mb-2">High-Barrier Matte Film</h4>
               <p className="text-primary-foreground/70 text-sm leading-relaxed">
-                Protects against moisture and oxygen while providing a premium, non-reflective soft-touch feel in the hand.
+                Protects against moisture and oxygen while delivering a premium, non-reflective soft-touch feel in the hand.
               </p>
             </div>
             <div>
               <CheckCircle2 className="w-6 h-6 text-accent mb-4" />
               <h4 className="font-medium text-lg mb-2">Custom Die-Cut Window</h4>
               <p className="text-primary-foreground/70 text-sm leading-relaxed">
-                Strategically positioned to show the texture of the artisanal bagels without compromising structural integrity.
+                Strategically positioned to showcase the texture of the artisanal product without compromising structural integrity.
               </p>
             </div>
             <div>
               <CheckCircle2 className="w-6 h-6 text-accent mb-4" />
               <h4 className="font-medium text-lg mb-2">Heavy-Duty Gusset</h4>
               <p className="text-primary-foreground/70 text-sm leading-relaxed">
-                Engineered bottom fold allows the heavy bagels to stand perfectly upright on retail shelves without toppling.
+                Engineered bottom fold allows the product to stand perfectly upright on retail shelves without toppling.
               </p>
             </div>
           </div>
@@ -133,10 +134,11 @@ export default function PortfolioDhavi() {
       </section>
 
       <section className="container mx-auto px-6 md:px-12 pt-24 text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-8">Want results like this?</h2>
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-4">Have a product that needs this kind of execution?</h2>
+        <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">Tell us what you're making. We'll tell you how we'd approach it.</p>
         <Link to="/contact">
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none h-14 px-10 text-base">
-            Let's Talk
+            Start a Conversation
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </Link>

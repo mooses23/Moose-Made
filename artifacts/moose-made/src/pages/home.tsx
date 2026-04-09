@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, ChevronRight, Truck, PenTool, Box, Star } from "lucide-react";
+import { ArrowRight, ChevronRight, Lightbulb, Settings, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MooseSilhouette } from "@/components/MooseLogo";
 
@@ -54,7 +54,7 @@ export default function Home() {
               {/* Brand badge */}
               <motion.div variants={fadeIn} className="inline-flex items-center gap-2.5 px-3 py-1.5 border border-accent/30 bg-accent/8 text-xs font-semibold uppercase tracking-widest mb-8" style={{ backgroundColor: "hsla(34,85%,38%,0.08)" }}>
                 <MooseSilhouette size={14} color="hsl(34 85% 38%)" />
-                <span style={{ color: "hsl(34 85% 30%)" }}>Craft-Made. Family-Owned.</span>
+                <span style={{ color: "hsl(34 85% 30%)" }}>Concept-to-Doorstep Execution</span>
               </motion.div>
 
               <motion.h1
@@ -62,14 +62,14 @@ export default function Home() {
                 className="text-5xl md:text-7xl font-serif font-semibold leading-[1.08] mb-6"
                 style={{ color: "hsl(210 35% 14%)" }}
               >
-                Packaging that<br />
+                From idea to<br />
                 <span
                   className="italic font-light"
                   style={{ color: "hsl(34 85% 38%)" }}
                 >
-                  proudly bears
+                  real product
                 </span><br />
-                your name.
+                in your hands.
               </motion.h1>
 
               <motion.p
@@ -77,7 +77,7 @@ export default function Home() {
                 className="text-lg md:text-xl mb-3 leading-relaxed max-w-lg font-medium"
                 style={{ color: "hsl(210 35% 14%)" }}
               >
-                Crafted with precision, delivered to the world.
+                We solve execution. You focus on your brand.
               </motion.p>
 
               <motion.p
@@ -85,28 +85,28 @@ export default function Home() {
                 className="text-base md:text-lg mb-10 leading-relaxed max-w-lg"
                 style={{ color: "hsl(30 12% 42%)" }}
               >
-                We design, source, and fulfill custom packaging with the care and craft your brand deserves — from structural design and dielines all the way to your warehouse door.
+                Moose Made is a full-service physical product execution partner — handling concept direction, engineering, manufacturing, quality control, and delivery so you don't have to navigate it alone.
               </motion.p>
 
               <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-                <Link to="/quote">
+                <Link to="/contact">
                   <Button
                     size="lg"
                     className="w-full sm:w-auto rounded-none h-14 px-8 text-base font-semibold group"
                     style={{ background: "hsl(210 35% 14%)", color: "hsl(38 30% 96%)" }}
                   >
-                    Start Your Project
+                    Start a Conversation
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
-                <Link to="/portfolio">
+                <Link to="/work">
                   <Button
                     variant="outline"
                     size="lg"
                     className="w-full sm:w-auto rounded-none h-14 px-8 text-base bg-transparent hover:bg-white/60"
                     style={{ borderColor: "hsl(30 20% 70%)", color: "hsl(210 35% 14%)" }}
                   >
-                    View Our Work
+                    See Our Work
                   </Button>
                 </Link>
               </motion.div>
@@ -123,17 +123,13 @@ export default function Home() {
                 </div>
                 <div className="w-px h-10" style={{ background: "hsl(30 20% 80%)" }} />
                 <div className="flex flex-col">
-                  <span className="font-serif text-2xl font-bold" style={{ color: "hsl(210 35% 14%)" }}>24hr</span>
-                  <span className="text-xs uppercase tracking-wider mt-0.5" style={{ color: "hsl(30 12% 50%)" }}>Quote Turnaround</span>
+                  <span className="font-serif text-2xl font-bold" style={{ color: "hsl(210 35% 14%)" }}>6 Stage</span>
+                  <span className="text-xs uppercase tracking-wider mt-0.5" style={{ color: "hsl(30 12% 50%)" }}>Proven Process</span>
                 </div>
                 <div className="w-px h-10" style={{ background: "hsl(30 20% 80%)" }} />
                 <div className="flex flex-col">
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-current" style={{ color: "hsl(34 85% 42%)" }} />
-                    ))}
-                  </div>
-                  <span className="text-xs uppercase tracking-wider mt-0.5" style={{ color: "hsl(30 12% 50%)" }}>Client Rated</span>
+                  <span className="font-serif text-2xl font-bold" style={{ color: "hsl(210 35% 14%)" }}>End-to-End</span>
+                  <span className="text-xs uppercase tracking-wider mt-0.5" style={{ color: "hsl(30 12% 50%)" }}>Full Execution</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -159,7 +155,7 @@ export default function Home() {
 
               <img
                 src={imgDhaviStand}
-                alt="D'Havi Spelt Bagels Packaging"
+                alt="D'Havi Artisanal Product"
                 className="w-full h-full object-cover shadow-2xl grayscale-[10%] hover:grayscale-0 transition-all duration-700"
               />
 
@@ -173,7 +169,7 @@ export default function Home() {
                 </p>
                 <h3 className="font-serif text-xl font-semibold mb-2 text-white">D'Havi Artisanal</h3>
                 <Link
-                  to="/portfolio/dhavi-spelt-bagels"
+                  to="/work/dhavi-spelt-bagels"
                   className="text-sm font-medium flex items-center transition-colors hover:opacity-80"
                   style={{ color: "hsl(34 85% 55%)" }}
                 >
@@ -189,7 +185,7 @@ export default function Home() {
       <section className="py-12 border-b border-border" style={{ background: "hsl(210 35% 14%)" }}>
         <div className="container mx-auto px-6 md:px-12 text-center">
           <p className="text-xs uppercase tracking-widest mb-8 font-medium" style={{ color: "hsl(34 85% 55%)" }}>
-            Trusted by emerging &amp; established brands worldwide
+            Execution partner to emerging &amp; growing brands
           </p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24" style={{ opacity: 0.5 }}>
             <span className="font-serif text-2xl font-bold text-white">D'Havi</span>
@@ -207,10 +203,10 @@ export default function Home() {
           <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
               <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6 text-primary">
-                Beyond printing.<br/>A full manufacturing partner.
+                We solve execution.<br/>So you don't have to.
               </h2>
               <p className="text-muted-foreground text-lg">
-                We don't just put ink on paper. We engineer structural dielines, match you with vetted suppliers, oversee quality control, and manage end-to-end fulfillment — so you can focus on growing your brand.
+                Most founders know what they want to make. What stops them is the how — factories, materials, tooling, QC, freight. We handle all of it, end to end, from your first rough idea to the product landing at your door.
               </p>
             </div>
           </div>
@@ -218,19 +214,19 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <PenTool className="w-6 h-6 mb-6" style={{ color: "hsl(34 85% 38%)" }} />,
-                title: "Structural Design",
-                desc: "From AI mockup to production-ready dieline. We engineer the structure, you focus on your brand."
+                icon: <Lightbulb className="w-6 h-6 mb-6" style={{ color: "hsl(34 85% 38%)" }} />,
+                title: "You Don't Need to Know Factories",
+                desc: "We speak the language of manufacturing — materials, tolerances, tooling costs, lead times. You bring the vision; we handle the complexity."
               },
               {
-                icon: <Box className="w-6 h-6 mb-6" style={{ color: "hsl(34 85% 38%)" }} />,
-                title: "Global Sourcing",
-                desc: "Direct access to audited manufacturing facilities, ensuring premium materials at competitive scale."
+                icon: <Settings className="w-6 h-6 mb-6" style={{ color: "hsl(34 85% 38%)" }} />,
+                title: "Full-Spectrum Execution",
+                desc: "From concept direction and engineering to sourcing, production oversight, and quality control — one partner for the entire physical product journey."
               },
               {
-                icon: <Truck className="w-6 h-6 mb-6" style={{ color: "hsl(34 85% 38%)" }} />,
-                title: "Fulfillment & Logistics",
-                desc: "From factory floor to your warehouse. We handle customs, freight, and final mile delivery."
+                icon: <Package className="w-6 h-6 mb-6" style={{ color: "hsl(34 85% 38%)" }} />,
+                title: "Concept to Doorstep",
+                desc: "We coordinate every link in the chain: design, manufacturing, QC, customs, and final delivery — so nothing falls through the cracks."
               }
             ].map((prop, idx) => (
               <div
@@ -247,15 +243,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* WHO THIS IS FOR */}
+      <section className="py-24" style={{ background: "hsl(210 35% 14%)" }}>
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="text-xs uppercase tracking-widest font-semibold mb-4" style={{ color: "hsl(34 85% 55%)" }}>Who We Work With</p>
+              <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6 text-white">
+                Built for people who are serious about making something real.
+              </h2>
+              <p className="text-white/60 text-lg leading-relaxed">
+                We work best with founders, independent creators, and small brands who have an idea and the conviction to bring it to market — but need a capable partner to handle the production side.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                { label: "Founders & Entrepreneurs", desc: "Launching a first physical product and need a reliable execution partner from day one." },
+                { label: "Independent Creators", desc: "Turning a loyal audience into a tangible product line — merchandise, consumables, custom goods." },
+                { label: "Small & Growing Brands", desc: "Scaling up production or expanding into new product categories without building an internal supply chain team." },
+              ].map((item, i) => (
+                <div key={i} className="p-6 border border-white/10 bg-white/5">
+                  <h4 className="font-semibold text-white mb-1">{item.label}</h4>
+                  <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PROCESS TIMELINE PREVIEW */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 md:px-12 text-center max-w-4xl">
-          <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6 text-primary">Our 8-Step Process</h2>
-          <p className="text-muted-foreground text-lg mb-16">A systematic approach from raw concept to finished goods in your warehouse.</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6 text-primary">The 6-Stage Execution Journey</h2>
+          <p className="text-muted-foreground text-lg mb-16">A clear, orchestrated process — from your first idea to a finished product at your door.</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
             {[
-              "1. Chat", "2. Strategy", "3. Design", "4. Dieline",
-              "5. Sourcing", "6. Sampling", "7. Production", "8. Delivery"
+              "01. Concept", "02. Design", "03. Engineering",
+              "04. Manufacturing", "05. Quality Control", "06. Delivery"
             ].map((step, i) => (
               <div
                 key={i}
@@ -269,7 +294,7 @@ export default function Home() {
 
           <Link to="/how-it-works">
             <Button variant="link" className="font-medium text-base h-auto p-0 group hover:text-accent" style={{ color: "hsl(210 35% 14%)" }}>
-              Explore the full process
+              See how each stage works
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
@@ -286,13 +311,13 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 border text-xs font-semibold uppercase tracking-widest mb-8" style={{ borderColor: "hsl(34 85% 38% / 0.35)", color: "hsl(34 85% 30%)", background: "hsla(34,85%,38%,0.07)" }}>
             <MooseSilhouette size={12} color="hsl(34 85% 38%)" />
-            Craft-Made. Globally Delivered.
+            Idea to Product. Start to Finish.
           </div>
           <h2 className="text-4xl md:text-6xl font-serif font-semibold mb-8 max-w-3xl mx-auto leading-tight text-primary">
-            Ready to put your craft in packaging that's worthy of it?
+            Ready to turn your idea into a real physical product?
           </h2>
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Reach out and we'll figure out the rest together.
+            Tell us what you're trying to make. We'll take it from there.
           </p>
           <Link to="/contact">
             <Button
@@ -300,7 +325,7 @@ export default function Home() {
               className="rounded-none h-16 px-12 text-lg hover:opacity-90 transition-opacity"
               style={{ background: "hsl(210 35% 14%)", color: "hsl(38 30% 96%)" }}
             >
-              Let's Talk
+              Start a Conversation
             </Button>
           </Link>
         </div>
