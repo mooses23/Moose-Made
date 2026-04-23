@@ -1,3 +1,16 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="180" height="180" rx="36" fill="#FF3C00"/>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="#1A2733"/>
+  <g fill="#D87616">
+    <path d="M22 21 L16 9 L13 10 L17 19 L11 13 L9 15 L15 22 L7 17 L6 20 L16 24 Z"/>
+    <path d="M42 21 L48 9 L51 10 L47 19 L53 13 L55 15 L49 22 L57 17 L58 20 L48 24 Z"/>
+    <ellipse cx="32" cy="30" rx="14" ry="15"/>
+    <rect x="25" y="38" width="14" height="13" rx="3.5"/>
+    <ellipse cx="32" cy="53" rx="3.5" ry="5"/>
+  </g>
+  <g fill="#1A2733">
+    <circle cx="27" cy="28" r="2.2"/>
+    <circle cx="37" cy="28" r="2.2"/>
+    <ellipse cx="29" cy="46" rx="1.6" ry="1.2"/>
+    <ellipse cx="35" cy="46" rx="1.6" ry="1.2"/>
+  </g>
 </svg>
